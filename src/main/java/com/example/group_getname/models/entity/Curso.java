@@ -26,6 +26,6 @@ public class Curso {
     private Date fecha_fin;
 
     @Column(name="activo")
-    private int activo; //boolean ??
+    private int activo; //boolean ?
 
 }
