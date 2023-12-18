@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 
 --
 
-CREATE TABLE `class` (
+CREATE TABLE `aula`(
                          `id_class` int(11) NOT NULL,
                          `id_teacher` int(11) NOT NULL,
                          `id_course` int(11) NOT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE `users_admin` (
 
 --
 
-ALTER TABLE `class`
+ALTER TABLE "'aula'"
     ADD PRIMARY KEY (`id_class`),
   ADD UNIQUE KEY `id_teacher` (`id_teacher`,`id_course`,`id_schedule`);
 
@@ -170,7 +170,7 @@ ALTER TABLE `users_admin`
 --
 
 --
-ALTER TABLE `class`
+ALTER TABLE "'aula'"
     MODIFY `id_class` int(11) NOT NULL AUTO_INCREMENT;
 --
 
