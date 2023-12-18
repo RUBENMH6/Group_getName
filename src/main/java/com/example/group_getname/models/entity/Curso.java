@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="cursos",uniqueConstraints = {@UniqueConstraint(columnNames = {"nombre", "fecha_inicio", "fecha_fin"})})
+@Table(name="curso",uniqueConstraints = {@UniqueConstraint(columnNames = {"nombre", "fecha_inicio", "fecha_fin"})})
 public class Curso {
 
     @Id
@@ -27,7 +27,5 @@ public class Curso {
 
     @Column(name="activo")
     private int activo; //boolean ??
-
-
 
 }

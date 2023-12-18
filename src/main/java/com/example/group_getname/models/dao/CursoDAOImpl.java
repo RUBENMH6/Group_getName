@@ -3,7 +3,10 @@ package com.example.group_getname.models.dao;
 import com.example.group_getname.models.entity.Curso;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+@Repository
 public class CursoDAOImpl implements CursoDAO{
 
     private EntityManager entityManager;
@@ -14,7 +17,9 @@ public class CursoDAOImpl implements CursoDAO{
     }
 
     @Override
+    @Transactional
     public void save(Curso curso) {
-
+        entityManager.persist(curso);
     }
+
 }
