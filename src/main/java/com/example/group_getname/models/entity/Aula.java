@@ -1,21 +1,24 @@
 package com.example.group_getname.models.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "nadador")
 public class Aula {
-    @Id
-    private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id_aula;
+
+
+
+    public void setId(int id_aula) {
+        this.id_aula = id_aula;
     }
 
-    public Long getId() {
-        return id;
+    public int getId() {
+        return id_aula;
     }
 }
