@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Matricula {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_matricula")
     private int id_matricula;
 

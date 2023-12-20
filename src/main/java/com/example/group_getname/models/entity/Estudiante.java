@@ -1,9 +1,6 @@
 package com.example.group_getname.models.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.sql.Date;
 
@@ -11,6 +8,7 @@ import java.sql.Date;
 @Table(name = "Estudiante")
 public class Estudiante {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
 
