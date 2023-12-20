@@ -2,7 +2,6 @@ package com.example.group_getname.models.entity;
 
 
 import jakarta.persistence.*;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.lang.NonNull;
 
 @Entity
