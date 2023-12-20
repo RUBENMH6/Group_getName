@@ -20,6 +20,16 @@ public class Matricula {
     @Column(name = "estado", nullable = false)
     private int estado;
 
+    //Relaciones
+
+    @ManyToOne
+    @JoinColumn(name = "id_curso", nullable = false)
+    private Estudiante estudiante;
+
+    @ManyToOne
+    @JoinColumn(name = "id_curso", nullable = false)
+    private Curso curso;
+
     public Matricula(int id_matricula, int id_estudiante, int id_curso, int estado) {
         this.id_matricula = id_matricula;
         this.id_estudiante = id_estudiante;
