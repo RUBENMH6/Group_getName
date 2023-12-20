@@ -17,6 +17,6 @@ public class AulaDAOImpl implements AulaDAO {
 
     @Override
     public void save(Aula aula) {
-
+        entityManager.persist(aula);
     }
 }
