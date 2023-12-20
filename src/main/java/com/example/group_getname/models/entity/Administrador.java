@@ -26,11 +26,15 @@ public class Administrador {
 
 
 
-    public UserAdmin(String username, String nombre, String email, String password) {
+    public Administrador(String username, String nombre, String email, String password) {
         this.username = username;
         this.nombre = nombre;
         this.email = email;
         this.password = password;
+    }
+
+    public Administrador() {
+
     }
 
     public int getIdUserAdmin() {
