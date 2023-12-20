@@ -30,6 +30,20 @@ public class Asignatura {
     @Column(name = "color", nullable = false)
     private String color;
 
+
+    //Relaciones
+
+    @ManyToOne
+    @JoinColumn(name = "id_profesor", insertable = false, updatable = false)
+    private Profesor profesor;
+
+    @ManyToOne
+    @JoinColumn(name = "id_curso", insertable = false, updatable = false)
+    private Curso curso;
+
+    @ManyToOne
+    @JoinColumn(name = "id_horario", insertable = false, updatable = false)
+    private Horario horario;
     public int getId_asignatura() {
         return id_asignatura;
     }

@@ -3,6 +3,7 @@ package com.example.group_getname.models.entity;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="curso",uniqueConstraints = {@UniqueConstraint(columnNames = {"nombre", "fecha_inicio", "fecha_fin"})})
@@ -27,6 +28,14 @@ public class Curso {
 
     @Column(name="activo", nullable = false)
     private int activo;
+
+    //Relaciones
+
+    @OneToMany(mappedBy = "cursos")
+    private List<Asignatura> asignaturas;
+
+    @OneToMany(mappedBy = "cursos")
+    private List<Matricula> matriculas;
 
     public Curso(int id_curso, String nombre, String descripcion, Date fecha_inicio, Date fecha_fin, int activo) {
         this.id_curso = id_curso;
