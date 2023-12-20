@@ -13,24 +13,21 @@ public class Aula {
     @Column(name = "id")
     private int id_aula;
 
-    @Column(name = "id_profesor")
+    @Column(name = "id_profesor", nullable = false)
     private int id_profesor;
 
-    @NonNull
-    @Column(name = "id_curso")
+
+    @Column(name = "id_curso", nullable = false)
     private int id_curso;
 
-    @NonNull
-    @Column(name = "id_horario")
+    @Column(name = "id_horario", nullable = false)
     private int id_horario;
 
-    @NonNull
-    @Column(name = "nombre")
+    @Column(name = "nombre", nullable = false)
     private String nombre;
 
 
-    @NonNull
-    @Column(name = "color")
+    @Column(name = "color", nullable = false)
     private String color;
 
     public int getId_aula() {
