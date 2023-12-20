@@ -1,7 +1,6 @@
 package com.example.group_getname.models.dao;
 
 import com.example.group_getname.models.entity.Administrador;
-import com.example.group_getname.models.entity.Aula;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

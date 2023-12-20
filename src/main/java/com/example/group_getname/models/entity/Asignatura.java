@@ -5,13 +5,13 @@ import jakarta.persistence.*;
 import org.springframework.lang.NonNull;
 
 @Entity
-@Table(name="aula",uniqueConstraints = {@UniqueConstraint(columnNames = {"id_profesor", "id_curso", "id_horario"})})
-public class Aula {
+@Table(name="asignatura",uniqueConstraints = {@UniqueConstraint(columnNames = {"id_profesor", "id_curso", "id_horario"})})
+public class Asignatura {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id_aula;
+    @Column(name = "id_asignatura")
+    private int id_asignatura;
 
     @Column(name = "id_profesor", nullable = false)
     private int id_profesor;
@@ -30,12 +30,12 @@ public class Aula {
     @Column(name = "color", nullable = false)
     private String color;
 
-    public int getId_aula() {
-        return id_aula;
+    public int getId_asignatura() {
+        return id_asignatura;
     }
 
-    public void setId_aula(int id_aula) {
-        this.id_aula = id_aula;
+    public void setId_asignatura(int id_asignatura) {
+        this.id_asignatura = id_asignatura;
     }
 
     public int getId_profesor() {
@@ -79,10 +79,10 @@ public class Aula {
     }
 
     public void setId(int id_aula) {
-        this.id_aula = id_aula;
+        this.id_asignatura = id_asignatura;
     }
 
     public int getId() {
-        return id_aula;
+        return id_asignatura;
     }
 }
