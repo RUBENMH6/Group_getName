@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name = "Estudiante")
+@Table(name = "estudiante")
 public class Estudiante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,15 +28,15 @@ public class Estudiante {
     private String apellido;
 
     @Column(name="telefono", nullable = false)
-    private int telefono;
+    private String telefono;
 
     @Column(name="nif", nullable = false)
     private String nif;
 
-    @Column(name="date_registered", nullable = false)
+    @Column(name="date_registered", nullable = false, columnDefinition = "DATETIME DEFAULT '0000-00-00 00:00:00'")
     private Date date_registered;
 
-    public Estudiante(int id, String user_name, String contraseña, String email, String nombre, String apellido, int telefono, String nif, Date date_registered) {
+    public Estudiante(int id, String user_name, String contraseña, String email, String nombre, String apellido, String telefono, String nif, Date date_registered) {
         this.id = id;
         this.user_name = user_name;
         this.contraseña = contraseña;
@@ -99,11 +99,11 @@ public class Estudiante {
         this.apellido = apellido;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
