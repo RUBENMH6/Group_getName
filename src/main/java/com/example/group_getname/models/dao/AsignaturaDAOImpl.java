@@ -1,22 +1,22 @@
 package com.example.group_getname.models.dao;
 
-import com.example.group_getname.models.entity.Aula;
+import com.example.group_getname.models.entity.Asignatura;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class AulaDAOImpl implements AulaDAO {
+public class AsignaturaDAOImpl implements AsignaturaDAO {
 
     private EntityManager entityManager;
 
     @Autowired
-    public AulaDAOImpl(EntityManager theEntityManager) {
+    public AsignaturaDAOImpl(EntityManager theEntityManager) {
         entityManager = theEntityManager;
     }
 
     @Override
-    public void save(Aula aula) {
-        entityManager.persist(aula);
+    public void save(Asignatura asignatura) {
+        entityManager.persist(asignatura);
     }
 }
