@@ -9,31 +9,31 @@ import java.sql.Date;
 public class Estudiante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="id", nullable = false)
     private int id;
 
-    @Column(name="user_name")
+    @Column(name="user_name", nullable = false)
     private String user_name;
 
-    @Column(name="contraseña")
+    @Column(name="contraseña", nullable = false)
     private String contraseña;
 
-    @Column(name="email")
+    @Column(name="email", nullable = false)
     private String email;
 
-    @Column(name="nombre")
+    @Column(name="nombre", nullable = false)
     private String nombre;
 
-    @Column(name="apellido")
+    @Column(name="apellido", nullable = false)
     private String apellido;
 
-    @Column(name="telefono")
+    @Column(name="telefono", nullable = false)
     private int telefono;
 
-    @Column(name="nif")
+    @Column(name="nif", nullable = false)
     private String nif;
 
-    @Column(name="date_registered")
+    @Column(name="date_registered", nullable = false)
     private Date date_registered;
 
     public Estudiante(int id, String user_name, String contraseña, String email, String nombre, String apellido, int telefono, String nif, Date date_registered) {

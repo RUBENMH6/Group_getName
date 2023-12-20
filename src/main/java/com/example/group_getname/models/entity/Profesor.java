@@ -7,25 +7,25 @@ import jakarta.persistence.Id;
 
 import java.io.Serializable;
 
-public class Profesor implements Serializable {
+public class Profesor {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id_matricula")
+    @Column(name = "id_matricula", nullable = false)
     private int id_profesor;
 
-    @Column(name = "nombre")
+    @Column(name = "nombre", nullable = false)
     private String nombre;
 
-    @Column(name = "apellido")
+    @Column(name = "apellido", nullable = false)
     private String apellido;
 
-    @Column(name = "telefono")
+    @Column(name = "telefono", nullable = false)
     private int telefono;
 
-    @Column(name = "nif")
+    @Column(name = "nif", nullable = false)
     private String nif;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     private String email;
 
     public Profesor(int id_profesor, String nombre, String apellido, int telefono, String nif, String email) {
@@ -37,7 +37,9 @@ public class Profesor implements Serializable {
         this.email = email;
     }
 
+    public Profesor() {
 
+    }
 
     public int getId_profesor() {
         return id_profesor;

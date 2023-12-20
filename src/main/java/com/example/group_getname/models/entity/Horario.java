@@ -8,22 +8,22 @@ import java.sql.Time;
 
 @Entity
 @Table(name="horario")
-public class Horario implements Serializable {
+public class Horario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_horario")
+    @Column(name = "id_horario", nullable = false)
 
     private int id_horario;
 
-    @Column(name = "id_clase")
+    @Column(name = "id_clase", nullable = false)
     private int id_clase;
 
-    @Column(name = "tiempo_empieza")
+    @Column(name = "tiempo_empieza", nullable = false)
     private Time tiempo_empieza;
-    @Column(name = "tiempo_acaba")
+    @Column(name = "tiempo_acaba", nullable = false)
     private Time tiempo_acaba;
-    @Column(name = "dia")
+    @Column(name = "dia", nullable = false)
     private Date dia;
 
     public Horario(int id_horario, int id_clase, Time tiempo_empieza, Time tiempo_acaba, Date dia) {

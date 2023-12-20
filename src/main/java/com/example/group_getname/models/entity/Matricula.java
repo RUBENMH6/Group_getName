@@ -8,17 +8,28 @@ public class Matricula {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_matricula")
+    @Column(name = "id_matricula", nullable = false)
     private int id_matricula;
 
-    @Column(name = "id_estudiante")
+    @Column(name = "id_estudiante", nullable = false)
     private int id_estudiante;
 
-    @Column(name = "id_curso")
+    @Column(name = "id_curso", nullable = false)
     private int id_curso;
 
-    @Column(name = "estado")
+    @Column(name = "estado", nullable = false)
     private int estado;
+
+    public Matricula(int id_matricula, int id_estudiante, int id_curso, int estado) {
+        this.id_matricula = id_matricula;
+        this.id_estudiante = id_estudiante;
+        this.id_curso = id_curso;
+        this.estado = estado;
+    }
+
+    public Matricula() {
+
+    }
 
     public int getId_matricula() {
         return id_matricula;
