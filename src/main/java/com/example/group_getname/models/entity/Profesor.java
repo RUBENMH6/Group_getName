@@ -1,16 +1,15 @@
 package com.example.group_getname.models.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
+@Entity
+@Table(name="profesor")
 public class Profesor {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id_matricula", nullable = false)
+    @Column(name = "id_profesor", nullable = false)
     private int id_profesor;
 
     @Column(name = "nombre", nullable = false)
