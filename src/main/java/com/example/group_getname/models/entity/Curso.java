@@ -10,23 +10,36 @@ public class Curso {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_curso")
+    @Column(name = "id_curso", nullable = false)
     private int id_curso;
 
-    @Column(name="nombre")
+    @Column(name="nombre", nullable = false)
     private String nombre;
 
-    @Column(name="descripcion")
+    @Column(name="descripcion", nullable = false)
     private String descripcion;
 
-    @Column(name="fecha_inicio")
+    @Column(name="fecha_inicio", nullable = false)
     private Date fecha_inicio;
 
-    @Column(name="fecha_fin")
+    @Column(name="fecha_fin", nullable = false)
     private Date fecha_fin;
 
-    @Column(name="activo")
-    private int activo; //boolean ?
+    @Column(name="activo", nullable = false)
+    private int activo;
+
+    public Curso(int id_curso, String nombre, String descripcion, Date fecha_inicio, Date fecha_fin, int activo) {
+        this.id_curso = id_curso;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.fecha_inicio = fecha_inicio;
+        this.fecha_fin = fecha_fin;
+        this.activo = activo;
+    }
+
+    public Curso() {
+
+    }
 
     public int getId_curso() {
         return id_curso;
