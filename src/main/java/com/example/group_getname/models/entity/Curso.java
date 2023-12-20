@@ -9,7 +9,7 @@ import java.util.Date;
 public class Curso {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_curso")
     private int id_curso;
 
