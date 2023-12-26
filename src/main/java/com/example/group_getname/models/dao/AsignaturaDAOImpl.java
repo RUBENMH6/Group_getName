@@ -37,8 +37,26 @@ public class AsignaturaDAOImpl implements AsignaturaDAO {
 
     @Override
     @Transactional
-    public void update(Asignatura asignatura, String nombre) {
+    public void updateName(Asignatura asignatura, String nombre) {
         asignatura.setNombre(nombre);
+        entityManager.merge(asignatura);
+    }
+
+    @Override
+    public void updateIdProfesor(Asignatura asignatura, int idProf) {
+        asignatura.setId_profesor(idProf);
+        entityManager.merge(asignatura);
+    }
+
+    @Override
+    public void updateIdCurso(Asignatura asignatura, int idCurso) {
+        asignatura.setId_curso(idCurso);
+        entityManager.merge(asignatura);
+    }
+
+    @Override
+    public void updateIdHorario(Asignatura asignatura, int idHorario) {
+        asignatura.setId_horario(idHorario);
         entityManager.merge(asignatura);
     }
 
