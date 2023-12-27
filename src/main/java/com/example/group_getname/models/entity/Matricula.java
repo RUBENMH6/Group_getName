@@ -23,7 +23,7 @@ public class Matricula {
     //Relaciones
 
     @ManyToOne
-    @JoinColumn(name = "id_curso", nullable = false) // error ??
+    @JoinColumn(name = "id_estudiante", nullable = false)
     private Estudiante estudiante;
 
     @ManyToOne
