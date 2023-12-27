@@ -12,8 +12,8 @@ public class Estudiante {
     @Column(name="id", nullable = false)
     private int id;
 
-    @Column(name="user_name", nullable = false)
-    private String user_name;
+    @Column(name="username", nullable = false)
+    private String username;
 
     @Column(name="password", nullable = false)
     private String password;
@@ -28,24 +28,24 @@ public class Estudiante {
     private String apellido;
 
     @Column(name="telefono", nullable = false)
-    private String telefono;
+    private int telefono;
 
     @Column(name="nif", nullable = false)
     private String nif;
 
     @Column(name="date_registered", nullable = false, columnDefinition = "DATETIME DEFAULT '0000-00-00 00:00:00'")
-    private Date date_registered;
+    private Date dateRegistered;
 
-    public Estudiante(int id, String user_name, String password, String email, String nombre, String apellido, String telefono, String nif, Date date_registered) {
+    public Estudiante(int id, String user_name, String password, String email, String nombre, String apellido, int telefono, String nif, Date dateRegistered) {
         this.id = id;
-        this.user_name = user_name;
+        this.username = user_name;
         this.password = password;
         this.email = email;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.nif = nif;
-        this.date_registered = date_registered;
+        this.dateRegistered = dateRegistered;
     }
 
     public Estudiante() {
@@ -59,12 +59,12 @@ public class Estudiante {
         this.id = id;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -99,11 +99,11 @@ public class Estudiante {
         this.apellido = apellido;
     }
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
@@ -115,11 +115,11 @@ public class Estudiante {
         this.nif = nif;
     }
 
-    public Date getDate_registered() {
-        return date_registered;
+    public Date getDateRegistered() {
+        return dateRegistered;
     }
 
-    public void setDate_registered(Date date_registered) {
-        this.date_registered = date_registered;
+    public void setDateRegistered(Date dateRegistered) {
+        this.dateRegistered = dateRegistered;
     }
 }
