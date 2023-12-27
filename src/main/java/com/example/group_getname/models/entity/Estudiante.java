@@ -15,8 +15,8 @@ public class Estudiante {
     @Column(name="user_name", nullable = false)
     private String user_name;
 
-    @Column(name="contraseña", nullable = false)
-    private String contraseña;
+    @Column(name="password", nullable = false)
+    private String password;
 
     @Column(name="email", nullable = false)
     private String email;
@@ -36,10 +36,10 @@ public class Estudiante {
     @Column(name="date_registered", nullable = false, columnDefinition = "DATETIME DEFAULT '0000-00-00 00:00:00'")
     private Date date_registered;
 
-    public Estudiante(int id, String user_name, String contraseña, String email, String nombre, String apellido, String telefono, String nif, Date date_registered) {
+    public Estudiante(int id, String user_name, String password, String email, String nombre, String apellido, String telefono, String nif, Date date_registered) {
         this.id = id;
         this.user_name = user_name;
-        this.contraseña = contraseña;
+        this.password = password;
         this.email = email;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -67,12 +67,12 @@ public class Estudiante {
         this.user_name = user_name;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
