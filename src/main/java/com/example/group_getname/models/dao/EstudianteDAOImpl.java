@@ -88,6 +88,11 @@ public class EstudianteDAOImpl implements EstudianteDAO{
     }
 
     @Override
+    public void updatePassword(Estudiante estudiante, String password) {
+        estudiante.setPassword(password);
+        entityManager.merge(estudiante);
+    }
+    @Override
     public void updateUsername(Estudiante estudiante, String username) {
         estudiante.setUsername(username);
         entityManager.merge(estudiante);

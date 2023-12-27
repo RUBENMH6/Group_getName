@@ -19,6 +19,7 @@ public interface EstudianteDAO {
     public void updateId(Estudiante estudiante, int id);
     public void updateNombre(Estudiante estudiante, String nombre);
     public void updateApellido(Estudiante estudiante, String apellido);
+    public void updatePassword(Estudiante estudiante, String password);
     public void updateUsername(Estudiante estudiante, String username);
     public void updateNif(Estudiante estudiante, String nif);
     public void updateTelefono(Estudiante estudiante, int telefono);
