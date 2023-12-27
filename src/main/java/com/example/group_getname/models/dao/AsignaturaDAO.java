@@ -12,6 +12,9 @@ public interface AsignaturaDAO {
     public Asignatura getForId(int id);
 
     public List<Asignatura> findAll();
+    public List<Asignatura> findAllProfesor(int idProfesor);
+    public List<Asignatura> findAllCurso(int idCurso);
+    public List<Asignatura> findAllHorario(int idHorario);
 
     public void updateName(Asignatura asignatura, String nombre);
     public void updateIdProfesor(Asignatura asignatura, int idProf);

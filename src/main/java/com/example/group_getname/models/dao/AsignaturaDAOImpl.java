@@ -36,6 +36,27 @@ public class AsignaturaDAOImpl implements AsignaturaDAO {
     }
 
     @Override
+    public List<Asignatura> findAllProfesor(int idProfesor) {
+        TypedQuery<Asignatura> query = entityManager.createQuery("FROM Asignatura WHERE id_profesor = :idProfesor", Asignatura.class);
+        query.setParameter("idProfesor", idProfesor);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Asignatura> findAllCurso(int idCurso) {
+        TypedQuery<Asignatura> query = entityManager.createQuery("FROM Asignatura WHERE id_curso = :idCurso", Asignatura.class);
+        query.setParameter("idCurso", idCurso);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Asignatura> findAllHorario(int idHorario) {
+        TypedQuery<Asignatura> query = entityManager.createQuery("FROM Asignatura WHERE id_horario = :idHorario", Asignatura.class);
+        query.setParameter("idHorario", idHorario);
+        return query.getResultList();
+    }
+
+    @Override
     @Transactional
     public void updateName(Asignatura asignatura, String nombre) {
         asignatura.setNombre(nombre);
