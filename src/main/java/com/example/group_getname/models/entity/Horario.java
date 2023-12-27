@@ -13,11 +13,10 @@ public class Horario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_horario", nullable = false)
-
     private int id_horario;
 
-    @Column(name = "id_clase", nullable = false)
-    private int id_clase;
+    @Column(name = "id_asignatura", nullable = false)
+    private int id_asignatura;
 
     @Column(name = "tiempo_empieza", nullable = false)
     private Time tiempo_empieza;
@@ -26,9 +25,15 @@ public class Horario {
     @Column(name = "dia", nullable = false)
     private Date dia;
 
-    public Horario(int id_horario, int id_clase, Time tiempo_empieza, Time tiempo_acaba, Date dia) {
+    //Relaciones
+    @ManyToOne
+    @JoinColumn(name = "id_asignatura", insertable = false, updatable = false)
+    private Asignatura asignatura;
+
+    //Constructores
+    public Horario(int id_horario, int id_asignatura, Time tiempo_empieza, Time tiempo_acaba, Date dia) {
         this.id_horario = id_horario;
-        this.id_clase = id_clase;
+        this.id_asignatura = id_asignatura;
         this.tiempo_empieza = tiempo_empieza;
         this.tiempo_acaba = tiempo_acaba;
         this.dia = dia;
@@ -38,6 +43,7 @@ public class Horario {
 
     }
 
+    //Getters y Setters
     public int getId_horario() {
         return id_horario;
     }
@@ -47,11 +53,11 @@ public class Horario {
     }
 
     public int getId_clase() {
-        return id_clase;
+        return id_asignatura;
     }
 
     public void setId_clase(int id_clase) {
-        this.id_clase = id_clase;
+        this.id_asignatura = id_clase;
     }
 
     public Time getTiempo_empieza() {
