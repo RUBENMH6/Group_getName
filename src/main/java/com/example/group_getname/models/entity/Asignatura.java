@@ -13,15 +13,15 @@ public class Asignatura {
     @Column(name = "id_asignatura")
     private int id_asignatura;
 
-    @Column(name = "id_profesor", nullable = false)
-    private int id_profesor;
-
-
-    @Column(name = "id_curso", nullable = false)
-    private int id_curso;
-
-    @Column(name = "id_horario", nullable = false)
-    private int id_horario;
+//    @Column(name = "id_profesor", nullable = false)
+//    private int id_profesor;
+//
+//
+//    @Column(name = "id_curso", nullable = false)
+//    private int id_curso;
+//
+//    @Column(name = "id_horario", nullable = false)
+//    private int id_horario;
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
@@ -34,15 +34,15 @@ public class Asignatura {
     //Relaciones
 
     @ManyToOne
-    @JoinColumn(name = "id_profesor", insertable = false, updatable = false)
+    @JoinColumn(name = "id_profesor" , referencedColumnName = "id_profesor", insertable = false, updatable = false)
     private Profesor profesor;
 
     @ManyToOne
-    @JoinColumn(name = "id_curso", insertable = false, updatable = false)
+    @JoinColumn(name = "id_curso", referencedColumnName = "id_curso", insertable = false, updatable = false)
     private Curso curso;
 
     @ManyToOne
-    @JoinColumn(name = "id_horario", insertable = false, updatable = false)
+    @JoinColumn(name = "id_horario", referencedColumnName = "id_horario", insertable = false, updatable = false)
     private Horario horario;
     public int getId_asignatura() {
         return id_asignatura;
@@ -52,29 +52,29 @@ public class Asignatura {
         this.id_asignatura = id_asignatura;
     }
 
-    public int getId_profesor() {
-        return id_profesor;
-    }
-
-    public void setId_profesor(int id_profesor) {
-        this.id_profesor = id_profesor;
-    }
-
-    public int getId_curso() {
-        return id_curso;
-    }
-
-    public void setId_curso(int id_curso) {
-        this.id_curso = id_curso;
-    }
-
-    public int getId_horario() {
-        return id_horario;
-    }
-
-    public void setId_horario(int id_horario) {
-        this.id_horario = id_horario;
-    }
+//    public int getId_profesor() {
+//        return id_profesor;
+//    }
+//
+//    public void setId_profesor(int id_profesor) {
+//        this.id_profesor = id_profesor;
+//    }
+//
+//    public int getId_curso() {
+//        return id_curso;
+//    }
+//
+//    public void setId_curso(int id_curso) {
+//        this.id_curso = id_curso;
+//    }
+//
+//    public int getId_horario() {
+//        return id_horario;
+//    }
+//
+//    public void setId_horario(int id_horario) {
+//        this.id_horario = id_horario;
+//    }
 
     public String getNombre() {
         return nombre;

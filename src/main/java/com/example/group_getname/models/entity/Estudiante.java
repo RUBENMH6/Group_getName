@@ -3,6 +3,7 @@ package com.example.group_getname.models.entity;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "estudiante")
@@ -36,6 +37,9 @@ public class Estudiante {
     @Column(name="date_registered", nullable = false, columnDefinition = "DATETIME DEFAULT '0000-00-00 00:00:00'")
     private Date dateRegistered;
 
+    @OneToMany(mappedBy = "estudiante")
+    private Set<Matricula> matriculas;
+
     public Estudiante(int id, String user_name, String password, String email, String nombre, String apellido, int telefono, String nif, Date dateRegistered) {
         this.id = id;
         this.username = user_name;
@@ -49,6 +53,14 @@ public class Estudiante {
     }
 
     public Estudiante() {
+    }
+
+    public Set<Matricula> getMatriculas() {
+        return this.matriculas;
+    }
+
+    public void setMatriculas(Set<Matricula> matriculas) {
+        this.matriculas = matriculas;
     }
 
     public int getId() {
