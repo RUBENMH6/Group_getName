@@ -2,15 +2,16 @@ package com.example.group_getname.models.entity;
 
 import jakarta.persistence.*;
 
-import java.io.Serializable;
-
 @Entity
 @Table(name="profesor")
 public class Profesor {
+
+    //Columnas
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id_profesor", nullable = false)
-    private int id_profesor;
+    @Column(name = "idProfesor", nullable = false)
+    private int idProfesor;
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
@@ -27,8 +28,14 @@ public class Profesor {
     @Column(name = "email", nullable = false)
     private String email;
 
-    public Profesor(int id_profesor, String nombre, String apellido, int telefono, String nif, String email) {
-        this.id_profesor = id_profesor;
+    //Relaciones
+
+
+
+    //Constructores
+
+    public Profesor(int idProfesor, String nombre, String apellido, int telefono, String nif, String email) {
+        this.idProfesor = idProfesor;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -40,12 +47,14 @@ public class Profesor {
 
     }
 
-    public int getId_profesor() {
-        return id_profesor;
+    //Getters y Setters
+
+    public int getIdProfesor() {
+        return idProfesor;
     }
 
-    public void setId_profesor(int id_profesor) {
-        this.id_profesor = id_profesor;
+    public void setIdProfesor(int id_profesor) {
+        this.idProfesor = id_profesor;
     }
 
     public String getNombre() {

@@ -1,7 +1,5 @@
 package com.example.group_getname.models.dao;
 
-import com.example.group_getname.models.entity.Curso;
-import com.example.group_getname.models.entity.Horario;
 import com.example.group_getname.models.entity.Profesor;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -77,7 +75,7 @@ public class ProfesorDAOImpl implements ProfesorDAO{
 
     @Override
     public void updateId(Profesor profesor, int id) {
-        profesor.setId_profesor(id);
+        profesor.setIdProfesor(id);
         entityManager.merge(profesor);
     }
 
