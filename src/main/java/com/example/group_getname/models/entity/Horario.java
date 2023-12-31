@@ -2,7 +2,6 @@ package com.example.group_getname.models.entity;
 
 import jakarta.persistence.*;
 
-import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
 
@@ -10,32 +9,34 @@ import java.sql.Time;
 @Table(name="horario")
 public class Horario {
 
+    //Columnas
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_horario", nullable = false)
-    private int id_horario;
+    @Column(name = "idHorario", nullable = false)
+    private int idHorario;
 
-    @Column(name = "id_asignatura", nullable = false)
-    private int id_asignatura;
+    @Column(name = "idAsignatura", nullable = false)
+    private int idAsignatura;
 
-    @Column(name = "tiempo_empieza", nullable = false)
-    private Time tiempo_empieza;
-    @Column(name = "tiempo_acaba", nullable = false)
-    private Time tiempo_acaba;
+    @Column(name = "tiempoEmpieza", nullable = false)
+    private Time tiempoEmpieza;
+    @Column(name = "tiempoAcaba", nullable = false)
+    private Time tiempoAcaba;
     @Column(name = "dia", nullable = false)
     private Date dia;
 
     //Relaciones
     @ManyToOne
-    @JoinColumn(name = "id_asignatura", insertable = false, updatable = false)
+    @JoinColumn(name = "idAsignatura")
     private Asignatura asignatura;
 
     //Constructores
-    public Horario(int id_horario, int id_asignatura, Time tiempo_empieza, Time tiempo_acaba, Date dia) {
-        this.id_horario = id_horario;
-        this.id_asignatura = id_asignatura;
-        this.tiempo_empieza = tiempo_empieza;
-        this.tiempo_acaba = tiempo_acaba;
+    public Horario(int idHorario, int idAsignatura, Time tiempoEmpieza, Time tiempoAcaba, Date dia) {
+        this.idHorario = idHorario;
+        this.idAsignatura = idAsignatura;
+        this.tiempoEmpieza = tiempoEmpieza;
+        this.tiempoAcaba = tiempoAcaba;
         this.dia = dia;
     }
 
@@ -44,36 +45,36 @@ public class Horario {
     }
 
     //Getters y Setters
-    public int getId_horario() {
-        return id_horario;
+    public int getIdHorario() {
+        return idHorario;
     }
 
-    public void setId_horario(int id_horario) {
-        this.id_horario = id_horario;
+    public void setIdHorario(int idHorario) {
+        this.idHorario = idHorario;
     }
 
-    public int getId_clase() {
-        return id_asignatura;
+    public int getIdAsignatura() {
+        return idAsignatura;
     }
 
-    public void setId_clase(int id_clase) {
-        this.id_asignatura = id_clase;
+    public void setIdAsignatura(int idAsignatura) {
+        this.idAsignatura = idAsignatura;
     }
 
-    public Time getTiempo_empieza() {
-        return tiempo_empieza;
+    public Time getTiempoEmpieza() {
+        return tiempoEmpieza;
     }
 
-    public void setTiempo_empieza(Time tiempo_empieza) {
-        this.tiempo_empieza = tiempo_empieza;
+    public void setTiempoEmpieza(Time tiempoEmpieza) {
+        this.tiempoEmpieza = tiempoEmpieza;
     }
 
-    public Time getTiempo_acaba() {
-        return tiempo_acaba;
+    public Time getTiempoAcaba() {
+        return tiempoAcaba;
     }
 
-    public void setTiempo_acaba(Time tiempo_acaba) {
-        this.tiempo_acaba = tiempo_acaba;
+    public void setTiempoAcaba(Time tiempoAcaba) {
+        this.tiempoAcaba = tiempoAcaba;
     }
 
     public Date getDia() {

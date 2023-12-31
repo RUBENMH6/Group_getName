@@ -1,8 +1,5 @@
 package com.example.group_getname.models.dao;
 
-import com.example.group_getname.models.entity.Administrador;
-import com.example.group_getname.models.entity.Asignatura;
-import com.example.group_getname.models.entity.Curso;
 import com.example.group_getname.models.entity.Horario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -48,39 +45,39 @@ public class HorarioDAOImpl implements HorarioDAO {
 
     @Override
     public List<Horario> findAllTiempoEmpieza(Time tiempoEmpieza) {
-        TypedQuery<Horario> query = entityManager.createQuery("FROM Horario WHERE tiempo_empieza = :tiempoEmpieza", Horario.class );
+        TypedQuery<Horario> query = entityManager.createQuery("FROM Horario WHERE tiempoEmpieza = :tiempoEmpieza", Horario.class );
         query.setParameter("tiempoEmpieza", tiempoEmpieza);
         return query.getResultList();
     }
 
     @Override
     public List<Horario> findAllTiempoAcaba(Time tiempoAcaba) {
-        TypedQuery<Horario> query = entityManager.createQuery("FROM Horario WHERE tiempo_acaba = :tiempoAcaba", Horario.class );
+        TypedQuery<Horario> query = entityManager.createQuery("FROM Horario WHERE tiempoAcaba = :tiempoAcaba", Horario.class );
         query.setParameter("tiempoAcaba", tiempoAcaba);
         return query.getResultList();
     }
 
     @Override
     public void updateIdHorario(Horario horario, int idHorario) {
-        horario.setId_horario(idHorario);
+        horario.setIdHorario(idHorario);
         entityManager.merge(horario);
     }
 
     @Override
     public void updateIdClase(Horario horario, int idClase) {
-        horario.setId_clase(idClase);
+        horario.setIdAsignatura(idClase);
         entityManager.merge(horario);
     }
 
     @Override
     public void updateTiempoEmpieza(Horario horario, Time tiempoEmpieza) {
-        horario.setTiempo_empieza(tiempoEmpieza);
+        horario.setTiempoEmpieza(tiempoEmpieza);
         entityManager.merge(horario);
     }
 
     @Override
     public void updateTiempoAcaba(Horario horario, Time tiempoAcaba) {
-        horario.setTiempo_acaba(tiempoAcaba);
+        horario.setTiempoAcaba(tiempoAcaba);
         entityManager.merge(horario);
     }
 
