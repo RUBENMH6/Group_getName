@@ -1,6 +1,5 @@
 package com.example.group_getname.models.dao;
 
-import com.example.group_getname.models.entity.Curso;
 import com.example.group_getname.models.entity.Matricula;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -39,14 +38,14 @@ public class MatriculaDAOImpl implements MatriculaDAO{
 
     @Override
     public List<Matricula> findEstudiante(int idEstudiante) {
-        TypedQuery<Matricula> query = entityManager.createQuery("FROM Matricula WHERE id_estudiante = :idEstudiante", Matricula.class);
+        TypedQuery<Matricula> query = entityManager.createQuery("FROM Matricula WHERE idEstudiante = :idEstudiante", Matricula.class);
         query.setParameter("idEstudiante", idEstudiante);
         return query.getResultList();
     }
 
     @Override
     public List<Matricula> findCurso(int idCurso) {
-        TypedQuery<Matricula> query = entityManager.createQuery("FROM Matricula WHERE id_curso = :idCurso", Matricula.class);
+        TypedQuery<Matricula> query = entityManager.createQuery("FROM Matricula WHERE idCurso = :idCurso", Matricula.class);
         query.setParameter("idCurso", idCurso);
         return query.getResultList();
     }
@@ -59,19 +58,19 @@ public class MatriculaDAOImpl implements MatriculaDAO{
 
     @Override
     public void updateId(Matricula matricula, int id) {
-        matricula.setId_matricula(id);
+        matricula.setIdMatricula(id);
         entityManager.merge(matricula);
     }
 
     @Override
     public void updateIdEstudiante(Matricula matricula, int idEstudiante) {
-        matricula.setId_estudiante(idEstudiante);
+        matricula.setIdEstudiante(idEstudiante);
         entityManager.merge(matricula);
     }
 
     @Override
     public void updateIdCurso(Matricula matricula, int idCurso) {
-        matricula.setId_curso(idCurso);
+        matricula.setIdCurso(idCurso);
         entityManager.merge(matricula);
     }
 
