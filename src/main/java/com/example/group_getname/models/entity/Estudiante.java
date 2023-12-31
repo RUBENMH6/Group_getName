@@ -13,8 +13,8 @@ public class Estudiante {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id", nullable = false)
-    private int id;
+    @Column(name="idEstudiante", nullable = false)
+    private int idEstudiante;
 
     @Column(name="username", nullable = false)
     private String username;
@@ -48,8 +48,8 @@ public class Estudiante {
 
     //Constructores
 
-    public Estudiante(int id, String user_name, String password, String email, String nombre, String apellido, String telefono, String nif, Date dateRegistered) {
-        this.id = id;
+    public Estudiante(int idEstudiante, String user_name, String password, String email, String nombre, String apellido, String telefono, String nif, Date dateRegistered) {
+        this.idEstudiante = idEstudiante;
         this.username = user_name;
         this.password = password;
         this.email = email;
@@ -74,12 +74,12 @@ public class Estudiante {
         this.matriculas = matriculas;
     }
 
-    public int getId() {
-        return id;
+    public int getIdEstudiante() {
+        return idEstudiante;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdEstudiante(int id) {
+        this.idEstudiante = id;
     }
 
     public String getUsername() {

@@ -6,7 +6,6 @@ import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.text.html.parser.Entity;
 import java.sql.Date;
 import java.util.List;
 
@@ -36,42 +35,48 @@ public class EstudianteDAOImpl implements EstudianteDAO{
     @Override
     public List<Estudiante> findName(String nombre) {
         TypedQuery<Estudiante> query = entityManager.createQuery("FROM Estudiante WHERE nombre = :nombre", Estudiante.class);
+        query.setParameter("nombre", nombre);
         return query.getResultList();
     }
 
     @Override
     public List<Estudiante> findApellido(String apellido) {
         TypedQuery<Estudiante> query = entityManager.createQuery("FROM Estudiante WHERE apellido = :apellido", Estudiante.class);
+        query.setParameter("apellido",apellido);
         return query.getResultList();
     }
 
     @Override
     public List<Estudiante> findUsername(String username) {
         TypedQuery<Estudiante> query = entityManager.createQuery("FROM Estudiante WHERE username = :username", Estudiante.class);
+        query.setParameter("username",username);
         return query.getResultList();
     }
 
     @Override
     public List<Estudiante> findNif(String nif) {
         TypedQuery<Estudiante> query = entityManager.createQuery("FROM Estudiante WHERE nif = :nif", Estudiante.class);
+        query.setParameter("nif",nif);
         return query.getResultList();
     }
 
     @Override
     public List<Estudiante> findTelefono(String telefono) {
         TypedQuery<Estudiante> query = entityManager.createQuery("FROM Estudiante WHERE telefono = :telefono", Estudiante.class);
+        query.setParameter("telefono",telefono);
         return query.getResultList();
     }
 
     @Override
     public List<Estudiante> findDateRegistered(Date dateRegistered) {
         TypedQuery<Estudiante> query = entityManager.createQuery("FROM Estudiante WHERE dateRegistered = :dateRegistered", Estudiante.class);
+        query.setParameter("dateRegistered", dateRegistered);
         return query.getResultList();
     }
 
     @Override
     public void updateId(Estudiante estudiante, int id) {
-        estudiante.setId(id);
+        estudiante.setIdEstudiante(id);
         entityManager.merge(estudiante);
     }
 
