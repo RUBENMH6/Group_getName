@@ -2,7 +2,6 @@ package com.example.group_getname.models.entity;
 
 
 import jakarta.persistence.*;
-import org.springframework.lang.NonNull;
 
 @Entity
 @Table(name="asignatura",uniqueConstraints = {@UniqueConstraint(columnNames = {"id_profesor", "id_curso", "id_horario"})})
@@ -11,17 +10,17 @@ public class Asignatura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_asignatura")
-    private int id_asignatura;
+    private int idAsignatura;
 
     @Column(name = "id_profesor", nullable = false)
-    private int id_profesor;
+    private int idProfesor;
 
 
     @Column(name = "id_curso", nullable = false)
-    private int id_curso;
+    private int idCurso;
 
     @Column(name = "id_horario", nullable = false)
-    private int id_horario;
+    private int idHorario;
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
@@ -44,36 +43,54 @@ public class Asignatura {
     @ManyToOne
     @JoinColumn(name = "id_horario", insertable = false, updatable = false)
     private Horario horario;
-    public int getId_asignatura() {
-        return id_asignatura;
+
+    //Constructor
+
+    public Asignatura(int idAsignatura, int idProfesor, int idCurso, int idHorario, String nombre, String color, Profesor profesor, Curso curso, Horario horario) {
+        this.idAsignatura = idAsignatura;
+        this.idProfesor = idProfesor;
+        this.idCurso = idCurso;
+        this.idHorario = idHorario;
+        this.nombre = nombre;
+        this.color = color;
+        this.profesor = profesor;
+        this.curso = curso;
+        this.horario = horario;
     }
 
-    public void setId_asignatura(int id_asignatura) {
-        this.id_asignatura = id_asignatura;
+
+    //Getters y Setters
+
+    public int getIdAsignatura() {
+        return idAsignatura;
     }
 
-    public int getId_profesor() {
-        return id_profesor;
+    public void setIdAsignatura(int id_asignatura) {
+        this.idAsignatura = id_asignatura;
     }
 
-    public void setId_profesor(int id_profesor) {
-        this.id_profesor = id_profesor;
+    public int getIdProfesor() {
+        return idProfesor;
     }
 
-    public int getId_curso() {
-        return id_curso;
+    public void setIdProfesor(int idProfesor) {
+        this.idProfesor = idProfesor;
     }
 
-    public void setId_curso(int id_curso) {
-        this.id_curso = id_curso;
+    public int getIdCurso() {
+        return idCurso;
     }
 
-    public int getId_horario() {
-        return id_horario;
+    public void setIdCurso(int idCurso) {
+        this.idCurso = idCurso;
     }
 
-    public void setId_horario(int id_horario) {
-        this.id_horario = id_horario;
+    public int getIdHorario() {
+        return idHorario;
+    }
+
+    public void setIdHorario(int idHorario) {
+        this.idHorario = idHorario;
     }
 
     public String getNombre() {
@@ -92,11 +109,11 @@ public class Asignatura {
         this.color = color;
     }
 
-    public void setId(int id_aula) {
-        this.id_asignatura = id_asignatura;
+    public void setId(int idAsignatura) {
+        this.idAsignatura = this.idAsignatura;
     }
 
     public int getId() {
-        return id_asignatura;
+        return idAsignatura;
     }
 }
