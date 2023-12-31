@@ -4,22 +4,22 @@ package com.example.group_getname.models.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="asignatura",uniqueConstraints = {@UniqueConstraint(columnNames = {"id_profesor", "id_curso", "id_horario"})})
+@Table(name="asignatura",uniqueConstraints = {@UniqueConstraint(columnNames = {"idProfesor", "idCurso", "idHorario"})})
 public class Asignatura {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_asignatura")
+    @Column(name = "idAsignatura")
     private int idAsignatura;
 
-    @Column(name = "id_profesor", nullable = false)
+    @Column(name = "idProfesor", nullable = false)
     private int idProfesor;
 
 
-    @Column(name = "id_curso", nullable = false)
+    @Column(name = "idCurso", nullable = false)
     private int idCurso;
 
-    @Column(name = "id_horario", nullable = false)
+    @Column(name = "idHorario", nullable = false)
     private int idHorario;
 
     @Column(name = "nombre", nullable = false)
@@ -33,18 +33,19 @@ public class Asignatura {
     //Relaciones
 
     @ManyToOne
-    @JoinColumn(name = "id_profesor", insertable = false, updatable = false)
+    @JoinColumn(name = "idProfesor", insertable = false, updatable = false)
     private Profesor profesor;
 
     @ManyToOne
-    @JoinColumn(name = "id_curso", insertable = false, updatable = false)
+    @JoinColumn(name = "idCurso", insertable = false, updatable = false)
     private Curso curso;
 
     @ManyToOne
-    @JoinColumn(name = "id_horario", insertable = false, updatable = false)
+    @JoinColumn(name = "idHorario", insertable = false, updatable = false)
     private Horario horario;
 
     //Constructor
+
 
     public Asignatura(int idAsignatura, int idProfesor, int idCurso, int idHorario, String nombre, String color, Profesor profesor, Curso curso, Horario horario) {
         this.idAsignatura = idAsignatura;
@@ -58,15 +59,17 @@ public class Asignatura {
         this.horario = horario;
     }
 
+    public Asignatura() {
+
+    }
 
     //Getters y Setters
-
     public int getIdAsignatura() {
         return idAsignatura;
     }
 
-    public void setIdAsignatura(int id_asignatura) {
-        this.idAsignatura = id_asignatura;
+    public void setIdAsignatura(int idAsignatura) {
+        this.idAsignatura = idAsignatura;
     }
 
     public int getIdProfesor() {
@@ -109,8 +112,8 @@ public class Asignatura {
         this.color = color;
     }
 
-    public void setId(int idAsignatura) {
-        this.idAsignatura = this.idAsignatura;
+    public void setId(int id_aula) {
+        this.idAsignatura = idAsignatura;
     }
 
     public int getId() {

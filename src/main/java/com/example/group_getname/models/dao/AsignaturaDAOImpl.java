@@ -37,7 +37,7 @@ public class AsignaturaDAOImpl implements AsignaturaDAO {
 
     @Override
     public List<Asignatura> findAllProfesor(int idProfesor) {
-        TypedQuery<Asignatura> query = entityManager.createQuery("FROM Asignatura WHERE id_profesor = :idProfesor", Asignatura.class);
+        TypedQuery<Asignatura> query = entityManager.createQuery("FROM Asignatura WHERE idProfesor = :idProfesor", Asignatura.class);
         query.setParameter("idProfesor", idProfesor);
         return query.getResultList();
     }
