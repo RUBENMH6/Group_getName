@@ -6,13 +6,15 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="curso",uniqueConstraints = {@UniqueConstraint(columnNames = {"nombre", "fecha_inicio", "fecha_fin"})})
+@Table(name="curso",uniqueConstraints = {@UniqueConstraint(columnNames = {"nombre", "fechaInicio", "fechaFin"})})
 public class Curso {
+
+    //Columnas
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_curso", nullable = false)
-    private int id_curso;
+    @Column(name = "idCurso", nullable = false)
+    private int idCurso;
 
     @Column(name="nombre", nullable = false)
     private String nombre;
@@ -20,35 +22,39 @@ public class Curso {
     @Column(name="descripcion", nullable = false)
     private String descripcion;
 
-    @Column(name="fecha_inicio", nullable = false)
-    private Date fecha_inicio;
+    @Column(name="fechaInicio", nullable = false)
+    private Date fechaInicio;
 
-    @Column(name="fecha_fin", nullable = false)
-    private Date fecha_fin;
+    @Column(name="fechaFin", nullable = false)
+    private Date fechaFin;
 
     @Column(name="activo", nullable = false)
     private int activo;
 
     //Relaciones
 
-    @OneToMany(mappedBy = "cursos")
+    @OneToMany(mappedBy = "curso")
     private List<Asignatura> asignaturas;
 
-    @OneToMany(mappedBy = "cursos")
+    @OneToMany(mappedBy = "curso")
     private List<Matricula> matriculas;
 
-    public Curso(int id_curso, String nombre, String descripcion, Date fecha_inicio, Date fecha_fin, int activo) {
-        this.id_curso = id_curso;
+    //Constructores
+
+    public Curso(int idCurso, String nombre, String descripcion, Date fechaInicio, Date fechaFin, int activo) {
+        this.idCurso = idCurso;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.fecha_inicio = fecha_inicio;
-        this.fecha_fin = fecha_fin;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
         this.activo = activo;
     }
 
     public Curso() {
 
     }
+
+    //Getters y Setters
 
     public List<Asignatura> getAsignaturas() {
         return asignaturas;
@@ -66,12 +72,12 @@ public class Curso {
         this.matriculas = matriculas;
     }
 
-    public int getId_curso() {
-        return id_curso;
+    public int getIdCurso() {
+        return idCurso;
     }
 
-    public void setId_curso(int id_curso) {
-        this.id_curso = id_curso;
+    public void setIdCurso(int id_curso) {
+        this.idCurso = id_curso;
     }
 
     public String getNombre() {
@@ -90,20 +96,20 @@ public class Curso {
         this.descripcion = descripcion;
     }
 
-    public Date getFecha_inicio() {
-        return fecha_inicio;
+    public Date getFechaInicio() {
+        return fechaInicio;
     }
 
-    public void setFecha_inicio(Date fecha_inicio) {
-        this.fecha_inicio = fecha_inicio;
+    public void setFechaInicio(Date fecha_inicio) {
+        this.fechaInicio = fecha_inicio;
     }
 
-    public Date getFecha_fin() {
-        return fecha_fin;
+    public Date getFechaFin() {
+        return fechaFin;
     }
 
-    public void setFecha_fin(Date fecha_fin) {
-        this.fecha_fin = fecha_fin;
+    public void setFechaFin(Date fecha_fin) {
+        this.fechaFin = fecha_fin;
     }
 
     public int getActivo() {

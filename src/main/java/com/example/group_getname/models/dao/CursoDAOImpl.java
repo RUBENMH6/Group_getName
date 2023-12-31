@@ -1,6 +1,5 @@
 package com.example.group_getname.models.dao;
 
-import com.example.group_getname.models.entity.Asignatura;
 import com.example.group_getname.models.entity.Curso;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -46,7 +45,7 @@ public class CursoDAOImpl implements CursoDAO{
 
     @Override
     public List<Curso> findAllFechaInicio(Date fechaInicio) {
-        TypedQuery<Curso> query = entityManager.createQuery("FROM Curso WHERE fecha_inicio >= :fechaInicio", Curso.class );
+        TypedQuery<Curso> query = entityManager.createQuery("FROM Curso WHERE fechaInicio >= :fechaInicio", Curso.class );
         query.setParameter("fechaInicio", fechaInicio);
         return query.getResultList();
     }
@@ -54,14 +53,14 @@ public class CursoDAOImpl implements CursoDAO{
 
     @Override
     public List<Curso> findAllFechaFin(Date fechaFin) {
-        TypedQuery<Curso> query = entityManager.createQuery("FROM Curso WHERE fecha_fin <= :fechaFin", Curso.class );
+        TypedQuery<Curso> query = entityManager.createQuery("FROM Curso WHERE fechaFin <= :fechaFin", Curso.class );
         query.setParameter("fechaFin", fechaFin);
         return query.getResultList();
     }
 
     @Override
     public void updateIdCurso(Curso curso, int id) {
-        curso.setId_curso(id);
+        curso.setIdCurso(id);
         entityManager.merge(curso);
     }
 
@@ -79,13 +78,13 @@ public class CursoDAOImpl implements CursoDAO{
 
     @Override
     public void updateFechaInicio(Curso curso, Date fechaInicio) {
-        curso.setFecha_inicio(fechaInicio);
+        curso.setFechaInicio(fechaInicio);
         entityManager.merge(curso);
     }
 
     @Override
     public void updateFechaFin(Curso curso, Date fechaFin) {
-        curso.setFecha_fin(fechaFin);
+        curso.setFechaFin(fechaFin);
         entityManager.merge(curso);
     }
 
