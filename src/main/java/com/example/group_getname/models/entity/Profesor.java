@@ -28,10 +28,6 @@ public class Profesor {
     @Column(name = "email", nullable = false)
     private String email;
 
-    //Relaciones
-
-
-
     //Constructores
 
     public Profesor(int idProfesor, String nombre, String apellido, int telefono, String nif, String email) {
