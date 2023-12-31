@@ -58,7 +58,7 @@ public class EstudianteDAOImpl implements EstudianteDAO{
     }
 
     @Override
-    public List<Estudiante> findTelefono(int telefono) {
+    public List<Estudiante> findTelefono(String telefono) {
         TypedQuery<Estudiante> query = entityManager.createQuery("FROM Estudiante WHERE telefono = :telefono", Estudiante.class);
         return query.getResultList();
     }
@@ -105,7 +105,7 @@ public class EstudianteDAOImpl implements EstudianteDAO{
     }
 
     @Override
-    public void updateTelefono(Estudiante estudiante, int telefono) {
+    public void updateTelefono(Estudiante estudiante, String telefono) {
         estudiante.setTelefono(telefono);
         entityManager.merge(estudiante);
     }

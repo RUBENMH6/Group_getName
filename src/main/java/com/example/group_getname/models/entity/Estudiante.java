@@ -8,6 +8,9 @@ import java.util.Set;
 @Entity
 @Table(name = "estudiante")
 public class Estudiante {
+
+    //Columnas
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id", nullable = false)
@@ -29,18 +32,23 @@ public class Estudiante {
     private String apellido;
 
     @Column(name="telefono", nullable = false)
-    private int telefono;
+    private String telefono;
 
     @Column(name="nif", nullable = false)
     private String nif;
 
-    @Column(name="date_registered", nullable = false, columnDefinition = "DATETIME DEFAULT '0000-00-00 00:00:00'")
+    @Column(name="dateRegistered", nullable = false, columnDefinition = "DATETIME DEFAULT '0000-00-00 00:00:00'")
     private Date dateRegistered;
+
+
+    //Relaciones
 
     @OneToMany(mappedBy = "estudiante")
     private Set<Matricula> matriculas;
 
-    public Estudiante(int id, String user_name, String password, String email, String nombre, String apellido, int telefono, String nif, Date dateRegistered) {
+    //Constructores
+
+    public Estudiante(int id, String user_name, String password, String email, String nombre, String apellido, String telefono, String nif, Date dateRegistered) {
         this.id = id;
         this.username = user_name;
         this.password = password;
@@ -53,7 +61,10 @@ public class Estudiante {
     }
 
     public Estudiante() {
+
     }
+
+    //Getters y Setters
 
     public Set<Matricula> getMatriculas() {
         return this.matriculas;
@@ -111,11 +122,11 @@ public class Estudiante {
         this.apellido = apellido;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

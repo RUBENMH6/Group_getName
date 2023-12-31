@@ -14,7 +14,7 @@ public interface EstudianteDAO {
     public List<Estudiante> findApellido(String apellido);
     public List<Estudiante> findUsername(String username);
     public List<Estudiante> findNif(String nif);
-    public List<Estudiante> findTelefono(int telefono);
+    public List<Estudiante> findTelefono(String telefono);
     public List<Estudiante> findDateRegistered(Date dateRegistered);
     public void updateId(Estudiante estudiante, int id);
     public void updateNombre(Estudiante estudiante, String nombre);
@@ -22,6 +22,6 @@ public interface EstudianteDAO {
     public void updatePassword(Estudiante estudiante, String password);
     public void updateUsername(Estudiante estudiante, String username);
     public void updateNif(Estudiante estudiante, String nif);
-    public void updateTelefono(Estudiante estudiante, int telefono);
+    public void updateTelefono(Estudiante estudiante, String telefono);
     public void updateDateRegistered(Estudiante estudiante, Date dateRegistered);
 }
