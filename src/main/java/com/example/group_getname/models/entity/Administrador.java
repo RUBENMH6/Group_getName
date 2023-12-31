@@ -4,13 +4,15 @@ package com.example.group_getname.models.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users_admin")
+@Table(name = "adminstrador")
 public class Administrador {
+
+    //Columnas
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_admin")
-    private int id_admin;
+    @Column(name = "idAdmin")
+    private int idAdmin;
 
     @Column(name = "username", nullable = false)
     private String username;
@@ -24,7 +26,9 @@ public class Administrador {
     @Column(name = "password", nullable = false)
     private String password;
 
+    //Relaciones
 
+    //Constructores
 
     public Administrador(String username, String nombre, String email, String password) {
         this.username = username;
@@ -37,12 +41,14 @@ public class Administrador {
 
     }
 
+    //Getters y Setters
+
     public int getIdUserAdmin() {
-        return id_admin;
+        return idAdmin;
     }
 
     public void setIdUserAdmin(int id_admin) {
-        this.id_admin = id_admin;
+        this.idAdmin = id_admin;
     }
 
     public String getUsername() {
