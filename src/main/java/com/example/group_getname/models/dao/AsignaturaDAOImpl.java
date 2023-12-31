@@ -44,14 +44,14 @@ public class AsignaturaDAOImpl implements AsignaturaDAO {
 
     @Override
     public List<Asignatura> findAllCurso(int idCurso) {
-        TypedQuery<Asignatura> query = entityManager.createQuery("FROM Asignatura WHERE id_curso = :idCurso", Asignatura.class);
+        TypedQuery<Asignatura> query = entityManager.createQuery("FROM Asignatura WHERE idCurso = :idCurso", Asignatura.class);
         query.setParameter("idCurso", idCurso);
         return query.getResultList();
     }
 
     @Override
     public List<Asignatura> findAllHorario(int idHorario) {
-        TypedQuery<Asignatura> query = entityManager.createQuery("FROM Asignatura WHERE id_horario = :idHorario", Asignatura.class);
+        TypedQuery<Asignatura> query = entityManager.createQuery("FROM Asignatura WHERE idHorario = :idHorario", Asignatura.class);
         query.setParameter("idHorario", idHorario);
         return query.getResultList();
     }
@@ -65,19 +65,19 @@ public class AsignaturaDAOImpl implements AsignaturaDAO {
 
     @Override
     public void updateIdProfesor(Asignatura asignatura, int idProf) {
-        asignatura.setId_profesor(idProf);
+        asignatura.setIdProfesor(idProf);
         entityManager.merge(asignatura);
     }
 
     @Override
     public void updateIdCurso(Asignatura asignatura, int idCurso) {
-        asignatura.setId_curso(idCurso);
+        asignatura.setIdCurso(idCurso);
         entityManager.merge(asignatura);
     }
 
     @Override
     public void updateIdHorario(Asignatura asignatura, int idHorario) {
-        asignatura.setId_horario(idHorario);
+        asignatura.setIdHorario(idHorario);
         entityManager.merge(asignatura);
     }
 
