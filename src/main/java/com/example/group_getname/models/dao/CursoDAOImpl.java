@@ -40,7 +40,7 @@ public class CursoDAOImpl implements CursoDAO{
     @Override
     public List<Curso> findAllActive() {
         TypedQuery<Curso> query = entityManager.createQuery("FROM Curso WHERE activo = 1", Curso.class );
-        return null;
+        return query.getResultList();
     }
 
     @Override
