@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 
 --
 
-CREATE TABLE `aula`(
+CREATE TABLE `asignatura`(
                          `id_class` int(11) NOT NULL,
                          `id_teacher` int(11) NOT NULL,
                          `id_course` int(11) NOT NULL,
