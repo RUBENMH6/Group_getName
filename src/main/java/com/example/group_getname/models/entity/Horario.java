@@ -28,7 +28,7 @@ public class Horario {
 
     //Relaciones
     @ManyToOne
-    @JoinColumn(name = "idAsignatura")
+    @JoinColumn(name = "asignatura")
     private Asignatura asignatura;
 
     //Constructores
