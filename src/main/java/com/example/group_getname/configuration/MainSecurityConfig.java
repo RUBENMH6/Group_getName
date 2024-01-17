@@ -37,6 +37,7 @@ public class MainSecurityConfig {
         http.authorizeHttpRequests(configurer ->
                         configurer
                                 .requestMatchers("/").hasRole("STUDENT")
+                                .requestMatchers("/students/**").hasRole("STUDENT")
                                 .requestMatchers("/teachers/**").hasRole("TEACHER")
                                 .anyRequest().authenticated()
                 ).exceptionHandling(configurer ->
