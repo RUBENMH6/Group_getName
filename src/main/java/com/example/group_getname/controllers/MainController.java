@@ -11,10 +11,14 @@ public class MainController {
         return "home";
     }
     @GetMapping("/teachers")
-    public String showLeaders() {
+    public String showTeachers() {
         return "teachers";
     }
 
+    @GetMapping("/students")
+    public String showStudents() {
+        return "students";
+    }
     @GetMapping("/access-denied")
     public String showAccessDenied(){
         return "access-denied";
