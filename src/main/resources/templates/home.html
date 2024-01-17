@@ -17,11 +17,11 @@
 
 <hr>
 <div sec:authorize="hasRole('STUDENT')">
-    <a th:href="@{/students}">Leadership Meeting</a> (Only for Manager peeps)
+    <a th:href="@{/students}">Students Meeting</a> (Only for Students peeps)
 </div>
 <br/>
 <div sec:authorize="hasRole('TEACHER')">
-    <a th:href="@{/teachers}">IT Systems Meeting</a> (Only for Admin peeps)
+    <a th:href="@{/teachers}">Teachers Meeting</a> (Only for Teachers peeps)
 </div>
 
 
