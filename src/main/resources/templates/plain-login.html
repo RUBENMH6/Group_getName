@@ -2,37 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Custom Login Page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<form action="#" th:action="@{/authenticateTheUser}" method="post">
-    <!-- Check for login error -->
-    <div th:if="${param.error}">
-        <i> Sorry! You entered invalid username/password</i>
-    </div>
-
-    <!-- Check for logout -->
-    <div th:if="${param.logout}">
-        <div class="alert alert-success col-xs-offset-1 col-xs-10">
-            You have been logged out.
+<div class="login-container">
+    <h2>Login</h2>
+    <form action="#" th:action="@{/authenticateTheUser}" method="post" class="login-form">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
         </div>
-    </div>
-
-    <div>
-        <label >Username:  </label>
-        <input type="text" name="username"/>
-
-    </div>
-
-    <div>
-        <label>Password: </label>
-        <input type="password" name="password" />
-
-    </div>
-
-    <input type="submit" value="Login">
-
-</form>
-
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>
