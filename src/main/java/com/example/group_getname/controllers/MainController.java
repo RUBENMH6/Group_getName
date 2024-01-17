@@ -7,7 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
     @GetMapping("/")
-    public String home() {
+    public String showHome() {
         return "home";
     }
+    @GetMapping("/teachers")
+    public String showLeaders() {
+        return "teachers";
+    }
+
+    @GetMapping("/access-denied")
+    public String showAccessDenied(){
+        return "access-denied";
+    }
+
+
 }

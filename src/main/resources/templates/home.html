@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h2>Home Group.getName()</h2>
+<hr>
+<p>Welcome</p>
+<hr>
+<p>
+    User <span sec:authentication="principal.username"></span>
+    <br/>
+    Role(s): <span sec:authentication="principal.authorities"></span>
+
+<hr>
+<div sec:authorize="hasRole('STUDENT')">
+    <a th:href="@{/students}">Leadership Meeting</a> (Only for Manager peeps)
+</div>
+<br/>
+<div sec:authorize="hasRole('TEACHER')">
+    <a th:href="@{/teachers}">IT Systems Meeting</a> (Only for Admin peeps)
+</div>
+
+
+</p>
+<hr>
+<form action="#" th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout">
+</form>
+</body>
+</html>
