@@ -3,6 +3,7 @@ package com.example.group_getname.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
@@ -49,8 +50,7 @@ public class MainSecurityConfig {
                                 .loginProcessingUrl("/authenticateTheUser")
                                 .permitAll()
                 )
-                .logout(logout -> logout.permitAll()
-                );
+                .logout(LogoutConfigurer::permitAll);
         return http.build();
     }
 
