@@ -13,7 +13,7 @@ public class Estudiante {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_rstudiante", nullable = false)
+    @Column(name="id_estudiante", nullable = false)
     private int idEstudiante;
 
     @Column(name="username", nullable = false)
