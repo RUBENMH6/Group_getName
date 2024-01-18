@@ -1,6 +1,5 @@
 package com.example.group_getname.controllers;
 
-import com.example.group_getname.repository.AsignaturaRepo;
 import com.example.group_getname.services.AsignaturaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

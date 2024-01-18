@@ -1,9 +1,9 @@
 package com.example.group_getname.repository;
 
-import com.example.group_getname.models.entity.Asignatura;
+import com.example.group_getname.models.entity.Curso;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AsignaturaRepo extends JpaRepository<Asignatura, Integer> {
+public interface CursoRepository extends JpaRepository<Curso, Integer> {
 }
