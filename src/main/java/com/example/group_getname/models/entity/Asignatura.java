@@ -112,7 +112,7 @@ public class Asignatura {
         this.color = color;
     }
 
-    public void setId(int id_aula) {
+    public void setId(int idAsignatura) {
         this.idAsignatura = idAsignatura;
     }
 
