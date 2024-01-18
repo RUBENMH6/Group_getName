@@ -12,39 +12,39 @@ import java.util.Optional;
 public class AsignaturaService implements IAsignaturaService {
 
     @Autowired
-    private AsignaturaRepository asignaturaRepo;
+    private AsignaturaRepository asignaturaRepository;
 
 
 
 
     @Override
     public List<Asignatura> findAll() {
-        return this.asignaturaRepo.findAll();
+        return this.asignaturaRepository.findAll();
     }
 
 
     @Override
     public Optional<Asignatura> findById(int id) {
-        return asignaturaRepo.findById(id);
+        return asignaturaRepository.findById(id);
     }
 
     @Override
     public Asignatura create(Asignatura asignatura) {
-        return asignaturaRepo.save(asignatura);
+        return asignaturaRepository.save(asignatura);
     }
 
     @Override
-    public Asignatura update(Asignatura asignaturas) {
-        Asignatura currentProducts= asignaturaRepo.findById(asignaturas.getId()).get();
-        currentProducts.setNombre(asignaturas.getNombre());
-        return asignaturaRepo.save(currentProducts);
+    public Asignatura update(Asignatura asignatura) {
+        Asignatura newAsignatura = asignaturaRepository.findById(asignatura.getId()).get();
+        newAsignatura.setNombre(asignatura.getNombre());
+        return asignaturaRepository.save(newAsignatura);
     }
 
     @Override
     public void delete(int id) {
-        Optional<Asignatura> product=asignaturaRepo.findById(id);
-        System.out.println(product);
-        asignaturaRepo.deleteById(id);
+        Optional<Asignatura> asignatura= asignaturaRepository.findById(id);
+        System.out.println(asignatura);
+        asignaturaRepository.deleteById(id);
 
     }
 
