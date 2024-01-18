@@ -10,7 +10,7 @@ public class Profesor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "idProfesor", nullable = false)
+    @Column(name = "id_profesor", nullable = false)
     private int idProfesor;
 
     @Column(name = "nombre", nullable = false)

@@ -8,13 +8,13 @@ public class Matricula {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idMatricula", nullable = false)
+    @Column(name = "id_matricula", nullable = false)
     private int idMatricula;
 
-    @Column(name = "idEstudiante", nullable = false)
+    @Column(name = "id_estudiante", nullable = false)
     private int idEstudiante;
 
-    @Column(name = "idCurso", nullable = false)
+    @Column(name = "id_curso", nullable = false)
     private int idCurso;
 
     @Column(name = "estado", nullable = false)

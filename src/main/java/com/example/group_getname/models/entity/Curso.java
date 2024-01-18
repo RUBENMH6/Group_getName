@@ -13,7 +13,7 @@ public class Curso {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idCurso", nullable = false)
+    @Column(name = "id_curso", nullable = false)
     private int idCurso;
 
     @Column(name="nombre", nullable = false)
@@ -22,10 +22,10 @@ public class Curso {
     @Column(name="descripcion", nullable = false)
     private String descripcion;
 
-    @Column(name="fechaInicio", nullable = false)
+    @Column(name="fecha_inicio", nullable = false)
     private Date fechaInicio;
 
-    @Column(name="fechaFin", nullable = false)
+    @Column(name="fecha_fin", nullable = false)
     private Date fechaFin;
 
     @Column(name="activo", nullable = false)

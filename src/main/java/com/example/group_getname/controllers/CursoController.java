@@ -15,7 +15,7 @@ public class CursoController {
         @GetMapping("/cursos")
         public String cursos(Model model){
             model.addAttribute("curso", CursoDAOImpl.findAll());
-            model.addAttribute("currentPage", "product");
+            model.addAttribute("currentPage", "curso");
             return "cursos";
         }
 
