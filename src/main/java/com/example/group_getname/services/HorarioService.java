@@ -1,6 +1,5 @@
 package com.example.group_getname.services;
 
-import com.example.group_getname.models.entity.Curso;
 import com.example.group_getname.models.entity.Horario;
 import com.example.group_getname.repository.HorarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
