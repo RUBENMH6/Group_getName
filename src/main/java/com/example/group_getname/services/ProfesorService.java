@@ -31,7 +31,7 @@ public class ProfesorService implements IProfesorService{
 
     @Override
     public Profesor update(Profesor profesor) {
-        Profesor newProfesor = this.profesorRepository.findById(profesor.getIdProfesor()).get();
+        Profesor newProfesor = this.profesorRepository.findById(profesor.getId_profesor()).get();
         newProfesor.setNombre(profesor.getNombre());
         newProfesor.setApellido(profesor.getApellido());
         newProfesor.setNif(profesor.getNif());

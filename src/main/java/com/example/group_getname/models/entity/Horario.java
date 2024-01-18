@@ -14,15 +14,15 @@ public class Horario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_horario", nullable = false)
-    private int idHorario;
+    private int id_horario;
 
     @Column(name = "id_asignatura", nullable = false)
-    private int idAsignatura;
+    private int id_asignatura;
 
     @Column(name = "tiempo_empieza", nullable = false)
-    private Time tiempoEmpieza;
+    private Time tiempo_empieza;
     @Column(name = "tiempo_acaba", nullable = false)
-    private Time tiempoAcaba;
+    private Time tiempo_acaba;
     @Column(name = "dia", nullable = false)
     private Date dia;
 
@@ -32,11 +32,11 @@ public class Horario {
     private Asignatura asignatura;
 
     //Constructores
-    public Horario(int idHorario, int idAsignatura, Time tiempoEmpieza, Time tiempoAcaba, Date dia) {
-        this.idHorario = idHorario;
-        this.idAsignatura = idAsignatura;
-        this.tiempoEmpieza = tiempoEmpieza;
-        this.tiempoAcaba = tiempoAcaba;
+    public Horario(int id_horario, int id_asignatura, Time tiempo_empieza, Time tiempo_acaba, Date dia) {
+        this.id_horario = id_horario;
+        this.id_asignatura = id_asignatura;
+        this.tiempo_empieza = tiempo_empieza;
+        this.tiempo_acaba = tiempo_acaba;
         this.dia = dia;
     }
 
@@ -45,36 +45,36 @@ public class Horario {
     }
 
     //Getters y Setters
-    public int getIdHorario() {
-        return idHorario;
+    public int getId_horario() {
+        return id_horario;
     }
 
-    public void setIdHorario(int idHorario) {
-        this.idHorario = idHorario;
+    public void setId_horario(int id_horario) {
+        this.id_horario = id_horario;
     }
 
-    public int getIdAsignatura() {
-        return idAsignatura;
+    public int getId_asignatura() {
+        return id_asignatura;
     }
 
-    public void setIdAsignatura(int idAsignatura) {
-        this.idAsignatura = idAsignatura;
+    public void setId_asignatura(int id_asignatura) {
+        this.id_asignatura = id_asignatura;
     }
 
-    public Time getTiempoEmpieza() {
-        return tiempoEmpieza;
+    public Time getTiempo_empieza() {
+        return tiempo_empieza;
     }
 
-    public void setTiempoEmpieza(Time tiempoEmpieza) {
-        this.tiempoEmpieza = tiempoEmpieza;
+    public void setTiempo_empieza(Time tiempo_empieza) {
+        this.tiempo_empieza = tiempo_empieza;
     }
 
-    public Time getTiempoAcaba() {
-        return tiempoAcaba;
+    public Time getTiempo_acaba() {
+        return tiempo_acaba;
     }
 
-    public void setTiempoAcaba(Time tiempoAcaba) {
-        this.tiempoAcaba = tiempoAcaba;
+    public void setTiempo_acaba(Time tiempo_acaba) {
+        this.tiempo_acaba = tiempo_acaba;
     }
 
     public Date getDia() {

@@ -31,7 +31,7 @@ public class EstudianteService implements IEstudianteService{
 
     @Override
     public Estudiante update(Estudiante estudiante) {
-        Estudiante newEstudiante = this.estudianteRepository.findById(estudiante.getIdEstudiante()).get();
+        Estudiante newEstudiante = this.estudianteRepository.findById(estudiante.getId_estudiante()).get();
         newEstudiante.setNombre(estudiante.getNombre());
         newEstudiante.setApellido(estudiante.getApellido());
         newEstudiante.setNif(estudiante.getNif());

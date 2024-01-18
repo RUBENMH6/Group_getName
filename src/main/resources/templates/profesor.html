@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Profesores</title>
 </head>
 <body>
+<a th:href="@{/}">Back to Home Page</a>
+<div th:each="profesor: ${profesor}">
+    <h2 th:text="${profesor.nombre}"></h2>
+    <p th:text="${profesor.apellido}"></p>
+    <p th:text="${profesor.telefono}">/p>
+    <p th:text="${profesor.nif}"></p>
+    <p th:text="${profesor.email}"></p>
+    <hr>
+</div>
+
 
 </body>
 </html>

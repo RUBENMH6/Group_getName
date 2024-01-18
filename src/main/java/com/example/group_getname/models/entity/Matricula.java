@@ -3,19 +3,19 @@ package com.example.group_getname.models.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="matricula",uniqueConstraints = {@UniqueConstraint(columnNames = {"idEstudiante", "idCurso"})})
+@Table(name="matricula",uniqueConstraints = {@UniqueConstraint(columnNames = {"id_estudiante", "id_curso"})})
 public class Matricula {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_matricula", nullable = false)
-    private int idMatricula;
+    private int id_matricula;
 
     @Column(name = "id_estudiante", nullable = false)
-    private int idEstudiante;
+    private int id_estudiante;
 
     @Column(name = "id_curso", nullable = false)
-    private int idCurso;
+    private int id_curso;
 
     @Column(name = "estado", nullable = false)
     private int estado;
@@ -32,10 +32,10 @@ public class Matricula {
 
     //Constructores
 
-    public Matricula(int idMatricula, int idEstudiante, int idCurso, int estado) {
-        this.idMatricula = idMatricula;
-        this.idEstudiante = idEstudiante;
-        this.idCurso = idCurso;
+    public Matricula(int id_matricula, int id_estudiante, int id_curso, int estado) {
+        this.id_matricula = id_matricula;
+        this.id_estudiante = id_estudiante;
+        this.id_curso = id_curso;
         this.estado = estado;
     }
 
@@ -45,28 +45,28 @@ public class Matricula {
 
     //Getters y Setters
 
-    public int getIdMatricula() {
-        return idMatricula;
+    public int getId_matricula() {
+        return id_matricula;
     }
 
-    public void setIdMatricula(int idMatricula) {
-        this.idMatricula = idMatricula;
+    public void setId_matricula(int id_matricula) {
+        this.id_matricula = id_matricula;
     }
 
-    public int getIdEstudiante() {
-        return idEstudiante;
+    public int getId_estudiante() {
+        return id_estudiante;
     }
 
-    public void setIdEstudiante(int idEstudiante) {
-        this.idEstudiante = idEstudiante;
+    public void setId_estudiante(int id_estudiante) {
+        this.id_estudiante = id_estudiante;
     }
 
-    public int getIdCurso() {
-        return idCurso;
+    public int getId_curso() {
+        return id_curso;
     }
 
-    public void setIdCurso(int idCurso) {
-        this.idCurso = idCurso;
+    public void setId_curso(int id_curso) {
+        this.id_curso = id_curso;
     }
 
     public int getEstado() {

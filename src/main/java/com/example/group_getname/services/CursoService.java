@@ -30,7 +30,7 @@ public class CursoService implements ICursoService{
 
     @Override
     public Curso update(Curso curso) {
-        Curso newCurso = this.cursoRepository.findById(curso.getIdCurso()).get();
+        Curso newCurso = this.cursoRepository.findById(curso.getId_curso()).get();
         newCurso.setActivo(curso.getActivo());
         return newCurso;
     }

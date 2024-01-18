@@ -10,19 +10,16 @@
 <p>Welcome</p>
 <hr>
 <p>
-    User <span sec:authentication="principal.username"></span>
-    <br/>
-    Role(s): <span sec:authentication="principal.authorities"></span>
+<!--    User <span sec:authentication="principal.username"></span>-->
+<!--    <br/>-->
+<!--    Role(s): <span sec:authentication="principal.authorities"></span>-->
 
-<hr>
-<div sec:authorize="hasRole('STUDENT')">
-    <a th:href="@{/students}">Students Meeting</a> (Only for Students peeps)
-</div>
-<br/>
 
-<div sec:authorize="hasRole('TEACHER')">
-    <a th:href="@{/teachers}">Teachers Meeting</a> (Only for Teachers peeps)
-</div>
+    <a th:href="@{/estudiantes}">Menu estudiantes</a> <br/>
+    <a th:href="@{/cursos}">Menu cursos</a> <br/>
+    <a th:href="@{/profesores}">Menu profesores</a> <br/>
+
+
 
 
 </p>

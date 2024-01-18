@@ -31,7 +31,7 @@ public class MatriculaService implements IMatriculaService{
 
     @Override
     public Matricula update(Matricula matricula) {
-        Matricula newMatricula = this.matriculaRepository.findById(matricula.getIdMatricula()).get();
+        Matricula newMatricula = this.matriculaRepository.findById(matricula.getId_matricula()).get();
         newMatricula.setEstado(matricula.getEstado());
         return newMatricula;
     }

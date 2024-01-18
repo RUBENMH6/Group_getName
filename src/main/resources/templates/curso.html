@@ -5,11 +5,12 @@
     <title>Cursos</title>
 </head>
 <body>
+<a th:href="@{/}">Back to Home Page</a>
 <div th:each="curso: ${curso}">
     <h2 th:text="${curso.nombre}"></h2>
     <p th:text="${curso.descripcion}"></p>
-    <p th:text="${curso.fechaInicio}">/p>
-    <p th:text="${curso.fechaFin}"></p>
+    <p th:text="${curso.fecha_inicio}">/p>
+    <p th:text="${curso.fecha_fin}"></p>
     <hr>
 </div>
 
