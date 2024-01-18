@@ -5,7 +5,6 @@ import com.example.group_getname.models.entity.Profesor;
 import com.example.group_getname.repository.ProfesorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 

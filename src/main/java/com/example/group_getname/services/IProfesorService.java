@@ -1,6 +1,5 @@
 package com.example.group_getname.services;
 
-import com.example.group_getname.models.entity.Asignatura;
 import com.example.group_getname.models.entity.Profesor;
 
 import java.util.List;
