@@ -1,7 +1,6 @@
 package com.example.group_getname.services;
 
 import com.example.group_getname.models.entity.Estudiante;
-import com.example.group_getname.models.entity.Horario;
 import com.example.group_getname.repository.EstudianteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
