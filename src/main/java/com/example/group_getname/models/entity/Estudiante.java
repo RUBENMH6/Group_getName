@@ -13,7 +13,7 @@ public class Estudiante {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idEstudiante", nullable = false)
+    @Column(name="id_rstudiante", nullable = false)
     private int idEstudiante;
 
     @Column(name="username", nullable = false)
@@ -37,7 +37,7 @@ public class Estudiante {
     @Column(name="nif", nullable = false)
     private String nif;
 
-    @Column(name="dateRegistered", nullable = false, columnDefinition = "DATETIME DEFAULT '0000-00-00 00:00:00'")
+    @Column(name="date_registered", nullable = false, columnDefinition = "DATETIME DEFAULT '0000-00-00 00:00:00'")
     private Date dateRegistered;
 
 

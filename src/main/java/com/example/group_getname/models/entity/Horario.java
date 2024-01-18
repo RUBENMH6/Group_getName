@@ -13,15 +13,15 @@ public class Horario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idHorario", nullable = false)
+    @Column(name = "id_horario", nullable = false)
     private int idHorario;
 
-    @Column(name = "idAsignatura", nullable = false)
+    @Column(name = "id_asignatura", nullable = false)
     private int idAsignatura;
 
-    @Column(name = "tiempoEmpieza", nullable = false)
+    @Column(name = "tiempo_empieza", nullable = false)
     private Time tiempoEmpieza;
-    @Column(name = "tiempoAcaba", nullable = false)
+    @Column(name = "tiempo_acaba", nullable = false)
     private Time tiempoAcaba;
     @Column(name = "dia", nullable = false)
     private Date dia;

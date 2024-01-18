@@ -9,17 +9,17 @@ public class Asignatura {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idAsignatura")
+    @Column(name = "id_asignatura")
     private int idAsignatura;
 
-    @Column(name = "idProfesor", nullable = false)
+    @Column(name = "id_profesor", nullable = false)
     private int idProfesor;
 
 
-    @Column(name = "idCurso", nullable = false)
+    @Column(name = "id_curso", nullable = false)
     private int idCurso;
 
-    @Column(name = "idHorario", nullable = false)
+    @Column(name = "id_horario", nullable = false)
     private int idHorario;
 
     @Column(name = "nombre", nullable = false)
@@ -33,15 +33,15 @@ public class Asignatura {
     //Relaciones
 
     @ManyToOne
-    @JoinColumn(name = "idProfesor", insertable = false, updatable = false)
+    @JoinColumn(name = "id_profesor", insertable = false, updatable = false)
     private Profesor profesor;
 
     @ManyToOne
-    @JoinColumn(name = "idCurso", insertable = false, updatable = false)
+    @JoinColumn(name = "id_curso", insertable = false, updatable = false)
     private Curso curso;
 
     @ManyToOne
-    @JoinColumn(name = "idHorario", insertable = false, updatable = false)
+    @JoinColumn(name = "id_horario", insertable = false, updatable = false)
     private Horario horario;
 
     //Constructor
