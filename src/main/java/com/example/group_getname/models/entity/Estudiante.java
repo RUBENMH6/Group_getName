@@ -2,6 +2,7 @@ package com.example.group_getname.models.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -32,13 +33,13 @@ public class Estudiante {
     private String apellido;
 
     @Column(name="telefono", nullable = false)
-    private String telefono;
+    private int telefono;
 
     @Column(name="nif", nullable = false)
     private String nif;
 
-    @Column(name="date_registered", nullable = false, columnDefinition = "DATETIME DEFAULT '0000-00-00 00:00:00'")
-    private Date date_registered;
+    @Column(name="date_registered", nullable = false)
+    private LocalDate date_registered;
 
 
     //Relaciones
@@ -48,7 +49,7 @@ public class Estudiante {
 
     //Constructores
 
-    public Estudiante(int id_estudiante, String user_name, String password, String email, String nombre, String apellido, String telefono, String nif, Date date_registered) {
+    public Estudiante(int id_estudiante, String user_name, String password, String email, String nombre, String apellido, int telefono, String nif, LocalDate date_registered) {
         this.id_estudiante = id_estudiante;
         this.username = user_name;
         this.password = password;
@@ -122,11 +123,11 @@ public class Estudiante {
         this.apellido = apellido;
     }
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
@@ -138,11 +139,11 @@ public class Estudiante {
         this.nif = nif;
     }
 
-    public Date getDateRegistered() {
+    public LocalDate getDateRegistered() {
         return date_registered;
     }
 
-    public void setDateRegistered(Date date_registered) {
+    public void setDateRegistered(LocalDate date_registered) {
         this.date_registered = date_registered;
     }
 }

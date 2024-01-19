@@ -2,6 +2,7 @@ package com.example.group_getname.models.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -23,10 +24,10 @@ public class Curso {
     private String descripcion;
 
     @Column(name="fecha_inicio", nullable = false)
-    private Date fecha_inicio;
+    private LocalDate fecha_inicio;
 
     @Column(name="fecha_fin", nullable = false)
-    private Date fecha_fin;
+    private LocalDate fecha_fin;
 
     @Column(name="activo", nullable = false)
     private int activo;
@@ -41,7 +42,7 @@ public class Curso {
 
     //Constructores
 
-    public Curso(int id_curso, String nombre, String descripcion, Date fecha_inicio, Date fecha_fin, int activo) {
+    public Curso(int id_curso, String nombre, String descripcion, LocalDate fecha_inicio, LocalDate fecha_fin, int activo) {
         this.id_curso = id_curso;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -96,19 +97,19 @@ public class Curso {
         this.descripcion = descripcion;
     }
 
-    public Date getFecha_inicio() {
+    public LocalDate getFecha_inicio() {
         return fecha_inicio;
     }
 
-    public void setFecha_inicio(Date fecha_inicio) {
+    public void setFecha_inicio(LocalDate fecha_inicio) {
         this.fecha_inicio = fecha_inicio;
     }
 
-    public Date getFecha_fin() {
+    public LocalDate getFecha_fin() {
         return fecha_fin;
     }
 
-    public void setFecha_fin(Date fecha_fin) {
+    public void setFecha_fin(LocalDate fecha_fin) {
         this.fecha_fin = fecha_fin;
     }
 
