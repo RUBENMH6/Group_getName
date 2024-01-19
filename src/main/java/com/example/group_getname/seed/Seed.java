@@ -25,11 +25,11 @@ public class Seed {
 
     public void generateSeeds(){
         //Cursos
-        Curso curso1 = new Curso(1,"Curso 1", "Descripcion 1", new Date(2023,9,10), new Date(2024,5,20), 1);
-        Curso curso2 = new Curso(2, "Curso 2", "Descripcion 2", new Date(2023,9,10), new Date(2024,5,20), 1);
-        Curso curso3 = new Curso(3, "Curso 3", "Descripcion 3", new Date(2023,9,10), new Date(2024,5,20), 1);
-        Curso curso4 = new Curso(4, "Curso 4", "Descripcion 4", new Date(2023,9,10), new Date(2024,5,20), 1);
-        Curso curso5 = new Curso(5, "Curso 5", "Descripcion 5", new Date(2023,9,10), new Date(2024,5,20), 1);
+        Curso curso1 = new Curso(1,"Acceso a datos", "Descripcion 1", new Date(2023,9,10), new Date(2024,5,20), 1);
+        Curso curso2 = new Curso(2, "Desarrollo Multimedia", "Descripcion 2", new Date(2023,9,10), new Date(2024,5,20), 1);
+        Curso curso3 = new Curso(3, "Desarrollo Interfaces", "Descripcion 3", new Date(2023,9,10), new Date(2024,5,20), 1);
+        Curso curso4 = new Curso(4, "Gestión empresarial", "Descripcion 4", new Date(2023,9,10), new Date(2024,5,20), 1);
+        Curso curso5 = new Curso(5, "Servicios y procesos", "Descripcion 5", new Date(2023,9,10), new Date(2024,5,20), 1);
 
         cursoRepository.save(curso1);
         cursoRepository.save(curso2);
@@ -39,10 +39,10 @@ public class Seed {
 
         //Profesor
         Profesor profesor1 = new Profesor(1,"Pedro", "Segarra",21212,"ES12345678A","pedro@gmail.com");
-        Profesor profesor2 = new Profesor(2,"Pedro", "Segarra",21212,"ES12345678A","pedro@gmail.com");
-        Profesor profesor3 = new Profesor(3,"Pedro", "Segarra",21212,"ES12345678A","pedro@gmail.com");
-        Profesor profesor4 = new Profesor(4,"Pedro", "Segarra",21212,"ES12345678A","pedro@gmail.com");
-        Profesor profesor5 = new Profesor(5,"Pedro", "Segarra",21212,"ES12345678A","pedro@gmail.com");
+        Profesor profesor2 = new Profesor(2,"Raúl Pedro", "Aceñero",21212,"ES12345678A","raul@gmail.com");
+        Profesor profesor3 = new Profesor(3,"Alicia", "Pitarch",21212,"ES12345678A","alicia@gmail.com");
+        Profesor profesor4 = new Profesor(4,"Carlos", "Saport",21212,"ES12345678A","carlos@gmail.com");
+        Profesor profesor5 = new Profesor(5,"Aitor", "Ventura",21212,"ES12345678A","aitor@gmail.com");
 
 
         profesorRepository.save(profesor1);
@@ -51,12 +51,14 @@ public class Seed {
         profesorRepository.save(profesor4);
         profesorRepository.save(profesor5);
 
-//        Horario horario1 = new Horario(1,1,new Time(15000), new Time(25000), new Date(2023,9,10));
-//        Horario horario2 = new Horario(2,1,new Time(15000), new Time(25000), new Date(2023,9,10));
-//        Horario horario3 = new Horario(3,1,new Time(15000), new Time(25000), new Date(2023,9,10));
-//        Horario horario4 = new Horario(4,1,new Time(15000), new Time(25000), new Date(2023,9,10));
-//        Horario horario5 = new Horario(5,1,new Time(15000), new Time(25000), new Date(2023,9,10));
-//
+        //Horarios
+
+        Horario horario1 = new Horario(1,1,new Time(15000), new Time(25000), new Date(2023,9,10));
+        Horario horario2 = new Horario(2,1,new Time(15000), new Time(25000), new Date(2023,9,10));
+        Horario horario3 = new Horario(3,1,new Time(15000), new Time(25000), new Date(2023,9,10));
+        Horario horario4 = new Horario(4,1,new Time(15000), new Time(25000), new Date(2023,9,10));
+        Horario horario5 = new Horario(5,1,new Time(15000), new Time(25000), new Date(2023,9,10));
+
 //        horarioRepository.save(horario1);
 //        horarioRepository.save(horario2);
 //        horarioRepository.save(horario3);
@@ -64,56 +66,32 @@ public class Seed {
 //        horarioRepository.save(horario5);
 
 
-        Asignatura asignatura1 = new Asignatura(1, 1, 1, 1,"Álgebra Lineal", "Rojo");
+
+        //Estudiantes
 
         Estudiante estudiante1 = new Estudiante(1,"sebas","test123","sebas@gmail.com", "Sebastian","Ogueta","14545445","ES32145678B", new Date(2023-8-30));
-        Estudiante estudiante2 = new Estudiante(2,"sebas","test123","sebas@gmail.com", "Sebastian","Ogueta","14545445","ES32145678B", new Date(2023-8-30));
-        Estudiante estudiante3 = new Estudiante(3,"sebas","test123","sebas@gmail.com", "Sebastian","Ogueta","14545445","ES32145678B", new Date(2023-8-30));
-        Estudiante estudiante4 = new Estudiante(4,"sebas","test123","sebas@gmail.com", "Sebastian","Ogueta","14545445","ES32145678B", new Date(2023-8-30));
-        Estudiante estudiante5 = new Estudiante(5,"sebas","test123","sebas@gmail.com", "Sebastian","Ogueta","14545445","ES32145678B", new Date(2023-8-30));
+        Estudiante estudiante2 = new Estudiante(2,"ruben","test123","ruben@gmail.com", "Rubén","Martínez","14545445","ES32145678B", new Date(2023-8-30));
+        Estudiante estudiante3 = new Estudiante(3,"licheng","test123","licheng@gmail.com", "Licheng","Qiu","14545445","ES32145678B", new Date(2023-8-30));
+        Estudiante estudiante4 = new Estudiante(4,"lucia","test123","lucia@gmail.com", "Lucía","Olmedo","14545445","ES32145678B", new Date(2023-8-30));
 
         estudianteRepository.save(estudiante1);
         estudianteRepository.save(estudiante2);
         estudianteRepository.save(estudiante3);
         estudianteRepository.save(estudiante4);
-        estudianteRepository.save(estudiante5);
 
-//        Matricula matricula1 = new Matricula(1,estudiante1.getId_estudiante(),curso1.getId_curso(),1);
-//        Matricula matricula2 = new Matricula(2,estudiante1.getId_estudiante(),curso1.getId_curso(),1);
-//        Matricula matricula3 = new Matricula(3,estudiante1.getId_estudiante(),curso1.getId_curso(),1);
-//        Matricula matricula4 = new Matricula(4,estudiante1.getId_estudiante(),curso1.getId_curso(),1);
-//        Matricula matricula5 = new Matricula(5,estudiante1.getId_estudiante(),curso1.getId_curso(),1);
-//
+        //Matricula
+
+        Matricula matricula1 = new Matricula(1,1, 1,1);
+        Matricula matricula2 = new Matricula(2,1,1,1);
+        Matricula matricula3 = new Matricula(3,1,1,1);
+        Matricula matricula4 = new Matricula(4,1,1,1);
+        Matricula matricula5 = new Matricula(5,1,1,1);
+
 //        matriculaRepository.save(matricula1);
 //        matriculaRepository.save(matricula2);
 //        matriculaRepository.save(matricula3);
 //        matriculaRepository.save(matricula4);
 //        matriculaRepository.save(matricula5);
-
-//profesorRepository.save(profesor1);
-//
-//        //Horario
-//
-//
-//  horarioRepository.save(horario1);
-//
-//        //Asignatura
-//
-//
-//     asignaturaRepository.save(asignatura1);
-//
-//        //Estudiante
-//
-//
- //       estudianteRepository.save(estudiante1);
-//
-//        //Matricula
-//
-//
-//        matriculaRepository.save(matricula1);
-
-
-
 
 
     }

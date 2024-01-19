@@ -26,6 +26,12 @@ public class EstudianteService implements IEstudianteService{
 
     @Override
     public Estudiante create(Estudiante estudiante) {
+        List<Estudiante> estudiantes = estudianteRepository.findAll();
+        for (Estudiante e : estudiantes){
+            if (e.getId_estudiante() == estudiante.getId_estudiante()) {
+                break;
+            }
+        }
         return this.estudianteRepository.save(estudiante);
     }
 

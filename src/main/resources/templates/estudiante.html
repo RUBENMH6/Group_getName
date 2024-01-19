@@ -2,19 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Estudiantes</title>
+    <title>Lista de Estudiantes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<a th:href="@{/}">Back to Home Page</a>
-<div th:each="estudiante: ${estudiante}">
-    <h2 th:text="${estudiante.nombre}"></h2>
-    <p th:text="${estudiante.apellido}"></p>
-    <p th:text="${estudiante.telefono}">/p>
-    <p th:text="${estudiante.nif}"></p>
-    <p th:text="${estudiante.email}"></p>
-    <hr>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/}">Group.getName()</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" th:href="@{/cursos}">Cursos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/profesores}">Profesores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/estudiantes}">Estudiantes</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-4">
+    <h2 class="mt-4">Lista de Estudiantes</h2>
 
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table mt-3">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">NIF</th>
+                    <th scope="col">Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="estudiante: ${estudiante}">
+                    <td th:text="${estudiante.id_estudiante}"></td>
+                    <td th:text="${estudiante.nombre}"></td>
+                    <td th:text="${estudiante.apellido}"></td>
+                    <td th:text="${estudiante.telefono}"></td>
+                    <td th:text="${estudiante.nif}"></td>
+                    <td th:text="${estudiante.email}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row justify-content-end">
+        <div class="col-md-2 text-right mt-4">
+            <a class="btn btn-primary btn-dark" th:href="@{/}">Volver</a>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
