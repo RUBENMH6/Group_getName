@@ -58,11 +58,11 @@ public class Seed {
         Horario horario4 = new Horario(4,1,new Time(15000), new Time(25000), new Date(2023,9,10));
         Horario horario5 = new Horario(5,1,new Time(15000), new Time(25000), new Date(2023,9,10));
 
-        horarioRepository.save(horario1);
-        horarioRepository.save(horario2);
-        horarioRepository.save(horario3);
-        horarioRepository.save(horario4);
-        horarioRepository.save(horario5);
+//        horarioRepository.save(horario1);
+//        horarioRepository.save(horario2);
+//        horarioRepository.save(horario3);
+//        horarioRepository.save(horario4);
+//        horarioRepository.save(horario5);
 
 
 
