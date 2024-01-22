@@ -27,9 +27,9 @@ public class Seed {
     public void generateSeeds(){
         //Cursos
         Curso curso1 = new Curso(1,"1CFS", "DAM", LocalDate.of(2023,9,10), LocalDate.of(2024,5,20), 1);
-        Curso curso2 = new Curso(2, "1CFS", "DAW", LocalDate.of(2023,9,10),  LocalDate.of(2024,5,20), 1);
-        Curso curso3 = new Curso(3, "2CFS", "DAM", LocalDate.of(2023,9,10), LocalDate.of(2024,5,20), 1);
-        Curso curso4 = new Curso(4, "2CFS", "DAW", LocalDate.of(2023,9,10),  LocalDate.of(2024,5,20), 1);
+        Curso curso2 = new Curso(2, "2CFS", "DAW", LocalDate.of(2023,9,10),  LocalDate.of(2024,5,20), 1);
+        Curso curso3 = new Curso(3, "3CFS", "DAM", LocalDate.of(2023,9,10), LocalDate.of(2024,5,20), 1);
+        Curso curso4 = new Curso(4, "4CFS", "DAW", LocalDate.of(2023,9,10),  LocalDate.of(2024,5,20), 1);
 
         cursoRepository.save(curso1);
         cursoRepository.save(curso2);
