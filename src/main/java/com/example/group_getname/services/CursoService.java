@@ -1,8 +1,6 @@
 package com.example.group_getname.services;
 
-import com.example.group_getname.models.entity.Asignatura;
 import com.example.group_getname.models.entity.Curso;
-import com.example.group_getname.repository.AsignaturaRepository;
 import com.example.group_getname.repository.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,7 +30,7 @@ public class CursoService implements ICursoService{
 
     @Override
     public Curso update(Curso curso) {
-        Curso newCurso = this.cursoRepository.findById(curso.getIdCurso()).get();
+        Curso newCurso = this.cursoRepository.findById(curso.getId_curso()).get();
         newCurso.setActivo(curso.getActivo());
         return newCurso;
     }

@@ -2,7 +2,8 @@ package com.example.group_getname.models.entity;
 
 import jakarta.persistence.*;
 
-import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -14,7 +15,7 @@ public class Estudiante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_estudiante", nullable = false)
-    private int idEstudiante;
+    private int id_estudiante;
 
     @Column(name="username", nullable = false)
     private String username;
@@ -32,13 +33,13 @@ public class Estudiante {
     private String apellido;
 
     @Column(name="telefono", nullable = false)
-    private String telefono;
+    private int telefono;
 
     @Column(name="nif", nullable = false)
     private String nif;
 
-    @Column(name="date_registered", nullable = false, columnDefinition = "DATETIME DEFAULT '0000-00-00 00:00:00'")
-    private Date dateRegistered;
+    @Column(name="date_registered", nullable = false)
+    private LocalDate date_registered;
 
 
     //Relaciones
@@ -48,8 +49,8 @@ public class Estudiante {
 
     //Constructores
 
-    public Estudiante(int idEstudiante, String user_name, String password, String email, String nombre, String apellido, String telefono, String nif, Date dateRegistered) {
-        this.idEstudiante = idEstudiante;
+    public Estudiante(int id_estudiante, String user_name, String password, String email, String nombre, String apellido, int telefono, String nif, LocalDate date_registered) {
+        this.id_estudiante = id_estudiante;
         this.username = user_name;
         this.password = password;
         this.email = email;
@@ -57,7 +58,7 @@ public class Estudiante {
         this.apellido = apellido;
         this.telefono = telefono;
         this.nif = nif;
-        this.dateRegistered = dateRegistered;
+        this.date_registered = date_registered;
     }
 
     public Estudiante() {
@@ -74,12 +75,12 @@ public class Estudiante {
         this.matriculas = matriculas;
     }
 
-    public int getIdEstudiante() {
-        return idEstudiante;
+    public int getId_estudiante() {
+        return id_estudiante;
     }
 
-    public void setIdEstudiante(int id) {
-        this.idEstudiante = id;
+    public void setId_estudiante(int id) {
+        this.id_estudiante = id;
     }
 
     public String getUsername() {
@@ -122,11 +123,11 @@ public class Estudiante {
         this.apellido = apellido;
     }
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
@@ -138,11 +139,11 @@ public class Estudiante {
         this.nif = nif;
     }
 
-    public Date getDateRegistered() {
-        return dateRegistered;
+    public LocalDate getDateRegistered() {
+        return date_registered;
     }
 
-    public void setDateRegistered(Date dateRegistered) {
-        this.dateRegistered = dateRegistered;
+    public void setDateRegistered(LocalDate date_registered) {
+        this.date_registered = date_registered;
     }
 }

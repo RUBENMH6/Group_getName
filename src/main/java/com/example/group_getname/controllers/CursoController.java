@@ -1,6 +1,6 @@
 package com.example.group_getname.controllers;
 
-import com.example.group_getname.models.dao.CursoDAOImpl;
+import com.example.group_getname.services.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,13 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class CursoController {
 
         @Autowired
-        private CursoDAOImpl CursoDAOImpl;
+        private CursoService cursoService;
 
         @GetMapping("/cursos")
         public String cursos(Model model){
-            model.addAttribute("curso", CursoDAOImpl.findAll());
-            model.addAttribute("currentPage", "curso");
-            return "cursos";
+            model.addAttribute("curso", cursoService.findAll());
+            return "curso";
         }
 
         /*
