@@ -11,7 +11,7 @@ public class AsignaturaController  {
 
     @Autowired
     private AsignaturaService asignaturaService;
-    @GetMapping("/asignatura")
+    @GetMapping("/asignaturas")
     public String asignaturas(Model model) {
         model.addAttribute("asignatura", asignaturaService.findAll());
         return "asignatura";

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
@@ -9,12 +9,14 @@
 
 <div class="container mt-5 text-center">
     <h2 class="mb-4">Bienvenido a la Universidad Group.getName()</h2>
-    <p>Selecciona una opción:</p>
+    <br>
 
     <div class="col-md-6 offset-md-3">
         <a class="btn btn-dark btn-block mb-2" style="width: 10rem; height: 10%" th:href="@{/cursos}">Ir a Cursos</a> <br>
         <a class="btn btn-dark btn-block mb-2" style="width: 10rem; height: 10%" th:href="@{/profesores}">Ir a Profesores</a> <br>
-        <a class="btn btn-dark btn-block mb-2" style="width: 10rem; height: 10%" th:href="@{/estudiantes}">Ir a Estudiantes</a>
+        <a class="btn btn-dark btn-block mb-2" style="width: 10rem; height: 10%" th:href="@{/estudiantes}">Ir a Estudiantes</a> <br>
+        <a class="btn btn-dark btn-block mb-2" style="width: 10rem; height: 10%" th:href="@{/estudiantes}">Ir a Horarios</a> <br>
+        <a class="btn btn-dark btn-block mb-2" style="width: 10rem; height: 10%" th:href="@{/asignaturas}">Ir a Asignaturas</a>
     </div>
 </div>
 
