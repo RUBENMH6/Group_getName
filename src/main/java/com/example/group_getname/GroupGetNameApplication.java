@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Bean;
 public class GroupGetNameApplication {
 
 	@Autowired
+	UsuarioRepository usuarioRepository;
+	@Autowired
 	CursoRepository cursoRepository;
 	@Autowired
 	AsignaturaRepository asignaturaRepository;
@@ -32,7 +34,7 @@ public class GroupGetNameApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(){
 		return runner -> {
-			Seed seed = new Seed(asignaturaRepository,cursoRepository, horarioRepository,  estudianteRepository, matriculaRepository, profesorRepository);
+			Seed seed = new Seed(usuarioRepository,asignaturaRepository,cursoRepository, horarioRepository,  estudianteRepository, matriculaRepository, profesorRepository);
 			seed.generateSeeds();
 		};
 

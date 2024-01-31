@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Lista de Asignaturas</title>
@@ -30,8 +30,15 @@
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/asignaturas}">Asignaturas</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
+                </li>
             </ul>
         </div>
+        <form class="form-inline ml-auto" th:action="@{/logout}" method="post">
+            <button class="btn btn-outline-light" type="submit">Logout</button>
+        </form>
+
     </div>
 </nav>
 <div class="container mt-4">
@@ -54,21 +61,33 @@
                 <tbody>
                 <tr th:each="asignatura: ${asignatura}">
                     <td th:text="${asignatura.id_asignatura}"></td>
+
+
                     <td th:text="${asignatura.nombre}"></td>
                     <td th:text="${asignatura.id_curso}"></td>
                     <td th:text="${asignatura.id_horario}"></td>
                     <td th:text="${asignatura.id_profesor}"></td>
                     <td th:text="${asignatura.color}"></td>
+                    <td>
+                        <div class="col-md-2 mt-4" sec:authorize="hasRole('ADMIN')">
+                            <button class="btn btn-primary btn-dark" th:href="@{/asignatura/${asignatura.id_asignatura}}" method="post">
+                                Modificar
+                            </button>
+                        </div>
+                    </td>
                 </tr>
+
                 </tbody>
             </table>
         </div>
     </div>
 
     <div class="row justify-content-end">
+
         <div class="col-md-2 text-right mt-4">
             <a class="btn btn-primary btn-dark" th:href="@{/}">Volver</a>
         </div>
+
     </div>
 </div>
 
