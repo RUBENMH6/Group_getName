@@ -2,11 +2,10 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Horarios</title>
+    <title>Lista de Usuarios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
     <div class="container-fluid">
         <a class="navbar-brand" th:href="@{/}">Group.getName()</a>
@@ -31,9 +30,10 @@
                     <a class="nav-link" th:href="@{/asignaturas}">Asignaturas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
+                    <a class="nav-link" th:href="@{/asignaturas}">Usuarios</a>
                 </li>
             </ul>
+
         </div>
         <form class="form-inline ml-auto" th:action="@{/logout}" method="post">
             <button class="btn btn-outline-light" type="submit">Logout</button>
@@ -42,7 +42,7 @@
     </div>
 </nav>
 <div class="container mt-4">
-    <h2 class="mt-4">Lista de Horarios</h2>
+    <h2 class="mt-4">Lista de Usuarios</h2>
 
     <div class="row">
         <div class="col-md-12">
@@ -50,18 +50,22 @@
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">DIA</th>
-                    <th scope="col">Hora inicio</th>
-                    <th scope="col">Hora fin</th>
-
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Rol</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="horario: ${horario}">
-                    <td th:text="${horario.id_horario}"></td>
-                    <td th:text="${horario.dia}"></td>
-                    <td th:text="${horario.tiempo_empieza}"></td>
-                    <td th:text="${horario.tiempo_acaba}"></td>
+                <tr th:each="estudiante: ${estudiante}">
+                    <td th:text="${estudiante.id_estudiante}"></td>
+                    <td th:text="${estudiante.nombre}"></td>
+                    <td th:text="${estudiante.apellido}"></td>
+                    <td th:text="${estudiante.telefono}"></td>
+                    <td th:text="${estudiante.nif}"></td>
+                    <td th:text="${estudiante.email}"></td>
+                    <td th:text="${estudiante.dateRegistered}"></td>
                 </tr>
                 </tbody>
             </table>

@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public class Seed {
+    private UsuarioRepository usuarioRepository;
     private AsignaturaRepository asignaturaRepository;
     private CursoRepository cursoRepository;
     private HorarioRepository horarioRepository;
@@ -15,7 +16,8 @@ public class Seed {
     private MatriculaRepository matriculaRepository;
     private ProfesorRepository profesorRepository;
 
-    public Seed(AsignaturaRepository asignaturaRepository, CursoRepository cursoRepository, HorarioRepository horarioRepository, EstudianteRepository estudianteRepository, MatriculaRepository matriculaRepository, ProfesorRepository profesorRepository) {
+    public Seed(UsuarioRepository usuarioRepository, AsignaturaRepository asignaturaRepository, CursoRepository cursoRepository, HorarioRepository horarioRepository, EstudianteRepository estudianteRepository, MatriculaRepository matriculaRepository, ProfesorRepository profesorRepository) {
+        this.usuarioRepository = usuarioRepository;
         this.asignaturaRepository = asignaturaRepository;
         this.cursoRepository = cursoRepository;
         this.horarioRepository = horarioRepository;
@@ -25,6 +27,16 @@ public class Seed {
     }
 
     public void generateSeeds(){
+
+        //Usuario
+        Usuario user1 = new Usuario(1, "ruben", "Ruben", "Martinez","test123","ruben@gmail.com","STUDENT");
+        Usuario user2 = new Usuario(2, "pedro", "Pedro", "Segarra","test123","pedro@gmail.com","TEACHER");
+        Usuario user3 = new Usuario(3, "admin", "Admin", "","admin","admin@gmail.com","ADMIN");
+
+        usuarioRepository.save(user1);
+        usuarioRepository.save(user2);
+        usuarioRepository.save(user3);
+
         //Cursos
         Curso curso1 = new Curso(1,"1CFS", "DAM", LocalDate.of(2023,9,10), LocalDate.of(2024,5,21), 1);
         Curso curso2 = new Curso(2, "2CFS", "DAW", LocalDate.of(2023,9,11),  LocalDate.of(2024,5,22), 1);

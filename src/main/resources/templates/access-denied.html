@@ -2,11 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Access denied</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Denied</title>
+  <!-- Incluir las referencias a Bootstrap (CSS) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body>
-<h2>Access Denied - You are not authorized to access this resource.</h2>
-<hr>
-<a th:href="@{/}">Back to Home Page</a>
+<body class="bg-light">
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body text-center">
+          <h2 class="text-danger">Acceso denegado</h2>
+          <p class="text-muted">No tienes autorización para acceder a esta página.</p>
+          <p class="text-muted">Ponte en contacto con el administrador para solicitar acceso.</p>
+          <hr>
+          <a class="btn btn-dark btn-block mb-2" style="width: 10rem; height: 10%" th:href="@{/}">Página principal</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Incluir las referencias a Bootstrap (JS y Popper.js) y jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
