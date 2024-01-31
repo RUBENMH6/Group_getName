@@ -1,5 +1,6 @@
 package com.example.group_getname.configuration;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -8,11 +9,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+
 @Configuration
 public class MainSecurityConfig {
 
+
+
     @Bean
     public InMemoryUserDetailsManager userDetailsManager() {
+
 
         UserDetails ruben = User.builder()
                 .username("ruben")
@@ -32,7 +37,7 @@ public class MainSecurityConfig {
                 .roles("STUDENT","TEACHER","ADMIN")
                 .build();
 
-        return new InMemoryUserDetailsManager(ruben, pedro, admin);
+       return new InMemoryUserDetailsManager(ruben,pedro, admin);
     }
 
 
@@ -42,9 +47,9 @@ public class MainSecurityConfig {
         http.authorizeHttpRequests(configurer ->
                         configurer
                                 .requestMatchers("/registro").permitAll()
-                                .requestMatchers("/").hasRole("STUDENT")
-                                .requestMatchers("/students/**").hasRole("STUDENT")
-                                .requestMatchers("/teachers/**").hasRole("TEACHER")
+                                .requestMatchers("/").permitAll()
+                                .requestMatchers("/*?").hasRole("STUDENT")
+                                .requestMatchers("/*?").hasRole("TEACHER")
                                 .requestMatchers("/usuarios/**").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 ).exceptionHandling(configurer ->

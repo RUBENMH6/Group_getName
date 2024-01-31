@@ -32,10 +32,12 @@ public class Seed {
         Usuario user1 = new Usuario(1, "ruben", "Ruben", "Martinez","test123","ruben@gmail.com","STUDENT");
         Usuario user2 = new Usuario(2, "pedro", "Pedro", "Segarra","test123","pedro@gmail.com","TEACHER");
         Usuario user3 = new Usuario(3, "admin", "Admin", "","admin","admin@gmail.com","ADMIN");
+        Usuario user4 = new Usuario(4, "test", "test", "","test","admin@gmail.com","ADMIN");
 
         usuarioRepository.save(user1);
         usuarioRepository.save(user2);
         usuarioRepository.save(user3);
+        usuarioRepository.save(user4);
 
         //Cursos
         Curso curso1 = new Curso(1,"1CFS", "DAM", LocalDate.of(2023,9,10), LocalDate.of(2024,5,21), 1);
