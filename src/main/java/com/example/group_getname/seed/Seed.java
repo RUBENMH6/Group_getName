@@ -2,6 +2,8 @@ package com.example.group_getname.seed;
 
 import com.example.group_getname.models.entity.*;
 import com.example.group_getname.repository.*;
+import com.example.group_getname.services.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.Time;
 import java.time.LocalDate;
@@ -16,6 +18,7 @@ public class Seed {
     private MatriculaRepository matriculaRepository;
     private ProfesorRepository profesorRepository;
 
+    private UsuarioService usuarioService;
     public Seed(UsuarioRepository usuarioRepository, AsignaturaRepository asignaturaRepository, CursoRepository cursoRepository, HorarioRepository horarioRepository, EstudianteRepository estudianteRepository, MatriculaRepository matriculaRepository, ProfesorRepository profesorRepository) {
         this.usuarioRepository = usuarioRepository;
         this.asignaturaRepository = asignaturaRepository;

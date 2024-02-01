@@ -48,8 +48,8 @@ public class MainSecurityConfig {
                         configurer
                                 .requestMatchers("/registro").permitAll()
                                 .requestMatchers("/").permitAll()
-                                .requestMatchers("/*?").hasRole("STUDENT")
-                                .requestMatchers("/*?").hasRole("TEACHER")
+                                .requestMatchers("/**").hasRole("STUDENT")
+                                .requestMatchers("/**").hasRole("TEACHER")
                                 .requestMatchers("/usuarios/**").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 ).exceptionHandling(configurer ->
