@@ -30,7 +30,7 @@
                     <a class="nav-link" th:href="@{/asignaturas}">Asignaturas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/asignaturas}">Usuarios</a>
+                    <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
                 </li>
             </ul>
 
@@ -52,20 +52,17 @@
                     <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
-                    <th scope="col">Teléfono</th>
                     <th scope="col">Email</th>
                     <th scope="col">Rol</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="estudiante: ${estudiante}">
-                    <td th:text="${estudiante.id_estudiante}"></td>
-                    <td th:text="${estudiante.nombre}"></td>
-                    <td th:text="${estudiante.apellido}"></td>
-                    <td th:text="${estudiante.telefono}"></td>
-                    <td th:text="${estudiante.nif}"></td>
-                    <td th:text="${estudiante.email}"></td>
-                    <td th:text="${estudiante.dateRegistered}"></td>
+                <tr th:each="usuario: ${usuarios}">
+                    <td th:text="${usuario.id_user}"></td>
+                    <td th:text="${usuario.nombre}"></td>
+                    <td th:text="${usuario.apellido}"></td>
+                    <td th:text="${usuario.email}"></td>
+                    <td th:text="${usuario.rol}"></td>
                 </tr>
                 </tbody>
             </table>

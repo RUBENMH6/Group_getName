@@ -13,8 +13,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class MainSecurityConfig {
 
-
-
     @Bean
     public InMemoryUserDetailsManager userDetailsManager() {
 
@@ -28,16 +26,16 @@ public class MainSecurityConfig {
         UserDetails pedro = User.builder()
                 .username("pedro")
                 .password("{noop}test123")
-                .roles("STUDENT","TEACHER")
+                .roles("STUDENT", "TEACHER")
                 .build();
 
         UserDetails admin = User.builder()
                 .username("admin")
                 .password("{noop}admin")
-                .roles("STUDENT","TEACHER","ADMIN")
+                .roles("STUDENT", "TEACHER", "ADMIN")
                 .build();
 
-       return new InMemoryUserDetailsManager(ruben,pedro, admin);
+        return new InMemoryUserDetailsManager(ruben, pedro, admin);
     }
 
 
@@ -47,9 +45,6 @@ public class MainSecurityConfig {
         http.authorizeHttpRequests(configurer ->
                         configurer
                                 .requestMatchers("/registro").permitAll()
-                                .requestMatchers("/").permitAll()
-                                .requestMatchers("/*?").hasRole("STUDENT")
-                                .requestMatchers("/*?").hasRole("TEACHER")
                                 .requestMatchers("/usuarios/**").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 ).exceptionHandling(configurer ->
