@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Lista de Cursos</title>
@@ -34,6 +34,9 @@
                 </li>
             </ul>
         </div>
+        <form class="form-inline ml-auto" th:action="@{/curso/create}" sec:authorize="hasRole('ADMIN')">
+            <button class="btn btn-outline-light" type="submit"> Añadir curso</button>
+        </form>
         <form class="form-inline ml-auto" th:action="@{/logout}" method="post">
             <button class="btn btn-outline-light" type="submit">Logout</button>
         </form>
