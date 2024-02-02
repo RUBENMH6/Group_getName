@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Añadir Estudiante</title>
+    <title>Añadir Horario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
@@ -43,42 +43,34 @@
     </div>
 </nav>
 
-<div class="container mt-4">
-    <h2 class="mt-4">Añadir Nuevo Asignatura</h2>
+<div class="container mt-6 justify-content-center">
+    <h2 class="mt-4">Añadir nuevo horario</h2>
 
-    <div class="row">
-        <div class="col-md-6">
-            <form th:action="@{/nueva_asignatura}" method="post">
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="curso">Curso:</label>
-                    <input type="text" class="form-control" id="curso" name="curso" required>
-                </div>
-                <div class="form-group">
-                    <label for="horario">Horario:</label>
-                    <input type="text" class="form-control" id="horario" name="horario" required>
-                </div>
-                <div class="form-group">
-                    <label for="profesor">Profesor:</label>
-                    <input type="text" class="form-control" id="profesor" name="profesor" required>
-                </div>
-                <div class="form-group">
-                    <label for="color">Color:</label>
-                    <input type="email" class="form-control" id="color" name="color" required>
-                </div>
-                <button type="submit" class="btn btn-dark">Guardar</button>
+    <div class="row justify-content-center">
+        <div class="col-md-6 justify-content-center">
+            <form th:action="@{/horario/create}" method="post">
+                    <label for="id">ID:</label><input type="text" id="id" name="id" required>
+                    <label for="asignatura">Asignatura:</label><input type="text" id="asignatura" name="asignatura" required>
+                    <label for="horario">Horario:</label><input type="text" id="horario" name="horario" required>
+                    <label for="tiempo_empieza">Empieza:</label><input type="text"  id="tiempo_empieza" name="tiempo_empieza" required>
+                    <label for="tiempo_acaba">Acaba:</label><input type="text"id="tiempo_acaba" name="tiempo_acaba" required>
+                    <label for="dia">Dia:</label><input type="text" id="dia" name="dia" required>
             </form>
         </div>
     </div>
 
-    <div class="row justify-content-end">
-        <div class="col-md-2 text-right mt-4">
-            <a class="btn btn-primary btn-dark" th:href="@{/asignaturas}">Volver</a>
+
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-6 justify-content-center">
+        <div class="mt-2 text-center">
+            <button type="submit" class="btn btn-dark" style="width: 10rem">Guardar</button>
+        </div>
+        <div class="mt-2 text-center">
+            <a class="btn btn-primary btn-dark" th:href="@{/horario}" style="width: 10rem">Volver</a>
         </div>
     </div>
+
 </div>
 
 </body>

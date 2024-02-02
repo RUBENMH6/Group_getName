@@ -19,7 +19,7 @@ public class EstudianteController {
         return "estudiante";
     }
 
-    @GetMapping("/nuevo_estudiante")
+    @GetMapping("/estudiante/create")
     private String nuevoEstudiante(Model model) {
         model.addAttribute("estudiante", new Estudiante());
         return "nuevo_estudiante";

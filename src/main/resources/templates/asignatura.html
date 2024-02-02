@@ -35,7 +35,7 @@
                 </li>
             </ul>
         </div>
-        <form class="form-inline ml-auto" th:action="@{/nueva_asignatura}" sec:authorize="hasRole('ADMIN')">
+        <form class="form-inline ml-auto" th:action="@{/asignatura/create}" sec:authorize="hasRole('ADMIN')">
             <button class="btn btn-outline-light" type="submit"> Añadir asignatura</button>
         </form>
         <form class="form-inline ml-auto" th:action="@{/logout}" method="post">
