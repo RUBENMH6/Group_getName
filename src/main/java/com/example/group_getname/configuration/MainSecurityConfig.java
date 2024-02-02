@@ -46,6 +46,7 @@ public class MainSecurityConfig {
                         configurer
                                 .requestMatchers("/registro").permitAll()
                                 .requestMatchers("/usuarios/**").hasRole("ADMIN")
+                                .requestMatchers("/nuev**/**").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 ).exceptionHandling(configurer ->
                         configurer

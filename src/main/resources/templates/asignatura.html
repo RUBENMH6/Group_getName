@@ -59,7 +59,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr  th:each="asignatura: ${asignatura}">
+                <tr class="justify-content-center align-items-center" th:each="asignatura: ${asignatura}">
                     <td th:text="${asignatura.id_asignatura}"></td>
 
 
@@ -69,8 +69,8 @@
                     <td th:text="${asignatura.id_profesor}"></td>
                     <td th:text="${asignatura.color}"></td>
                     <td>
-                        <div class="d-flex justify-content-center align-items-center my-4" sec:authorize="hasRole('ADMIN')">
-                            <button class="btn btn-primary btn-dark" style="width: 5rem; height: 3rem;" th:href="@{/asignatura/${asignatura.id_asignatura}}" method="post">
+                        <div class="justify-content-center align-items-center" sec:authorize="hasRole('ADMIN')">
+                            <button class="btn btn-primary btn-dark" style="width: 7rem; height: 2.5rem;" th:href="@{/asignatura/${asignatura.id_asignatura}}" method="post">
                                 Modificar
                             </button>
                         </div>
