@@ -43,18 +43,18 @@
     </div>
 </nav>
 
-<div class="container mt-6 justify-content-center">
+<div class="container mt-4">
     <h2 class="mt-4">Añadir nuevo horario</h2>
 
-    <div class="row justify-content-center">
-        <div class="col-md-6 justify-content-center">
+    <div class="row">
+        <div class="col-md-6">
             <form th:action="@{/horario/create}" method="post">
-                    <label for="id">ID:</label><input type="text" id="id" name="id" required>
-                    <label for="asignatura">Asignatura:</label><input type="text" id="asignatura" name="asignatura" required>
-                    <label for="horario">Horario:</label><input type="text" id="horario" name="horario" required>
-                    <label for="tiempo_empieza">Empieza:</label><input type="text"  id="tiempo_empieza" name="tiempo_empieza" required>
-                    <label for="tiempo_acaba">Acaba:</label><input type="text"id="tiempo_acaba" name="tiempo_acaba" required>
-                    <label for="dia">Dia:</label><input type="text" id="dia" name="dia" required>
+                    <label for="id">ID:</label><input type="text" class="form-control" id="id" name="id" required>
+                    <label for="asignatura">Asignatura:</label><input type="text" class="form-control" id="asignatura" name="asignatura" required>
+                    <label for="horario">Horario:</label><input type="text" class="form-control" id="horario" name="horario" required>
+                    <label for="tiempo_empieza">Empieza:</label><input type="text" class="form-control"  id="tiempo_empieza" name="tiempo_empieza" required>
+                    <label for="tiempo_acaba">Acaba:</label><input type="text" class="form-control" id="tiempo_acaba" name="tiempo_acaba" required>
+                    <label for="dia">Dia:</label><input type="text" class="form-control" id="dia" name="dia" required>
             </form>
         </div>
     </div>
