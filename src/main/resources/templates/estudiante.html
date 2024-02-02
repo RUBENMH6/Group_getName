@@ -60,6 +60,9 @@
                     <th scope="col">NIF</th>
                     <th scope="col">Email</th>
                     <th scope="col">Fecha registro</th>
+                    <th>
+                        <div class="justify-content-center align-items-center" sec:authorize="hasRole('ADMIN')"/>
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -71,6 +74,13 @@
                     <td th:text="${estudiante.nif}"></td>
                     <td th:text="${estudiante.email}"></td>
                     <td th:text="${estudiante.dateRegistered}"></td>
+                    <td>
+                        <div class="justify-content-center align-items-center" sec:authorize="hasRole('ADMIN')">
+                            <button class="btn btn-primary btn-dark" style="width: 7rem; height: 2.5rem;" th:href="@{/asignatura/${estudiante.id_estudiante}}" method="post">
+                                Modificar
+                            </button>
+                        </div>
+                    </td>
                 </tr>
                 </tbody>
             </table>
