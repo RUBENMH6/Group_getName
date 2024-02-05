@@ -9,11 +9,11 @@ import java.util.Collections;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario implements UserDetails {
+public class Usuario  {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_user", nullable = false)
     private int id_user;
 
     @Column(name = "username")
@@ -51,48 +51,16 @@ public class Usuario implements UserDetails {
 
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        // Devuelve una lista de roles (GrantedAuthority) asociados al usuario
-        return Collections.singletonList(() -> "ROLE_" + rol);
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return username;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true; // Puedes implementar lógica personalizada si es necesario
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true; // Puedes implementar lógica personalizada si es necesario
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true; // Puedes implementar lógica personalizada si es necesario
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true; // Puedes implementar lógica personalizada si es necesario
-    }
-
     public int getId_user() {
         return id_user;
     }
 
     public void setId_user(int id_user) {
         this.id_user = id_user;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public void setUsername(String username) {
@@ -113,6 +81,10 @@ public class Usuario implements UserDetails {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public void setPassword(String password) {
