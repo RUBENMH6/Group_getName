@@ -21,14 +21,5 @@ public class RegistroController {
         return "registro";
     }
 
-    @PostMapping("/registro")
-    public String procesarRegistro(@ModelAttribute("usuario") Usuario usuario, @RequestParam("confirmPassword") String confirmPassword) {
-        if (!usuario.getPassword().equals(confirmPassword)) {
-            return "redirect:/registro?error=passwordMismatch";
-        }
-        usuarioRepository.save(usuario);
-
-        return "redirect:/login?registroExitoso";
-    }
 
 }
