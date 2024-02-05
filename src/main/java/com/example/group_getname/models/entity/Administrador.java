@@ -11,8 +11,8 @@ public class Administrador {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idAdmin")
-    private int idAdmin;
+    @Column(name = "id_admin")
+    private int id_admin;
 
     @Column(name = "username", nullable = false)
     private String username;
@@ -44,11 +44,11 @@ public class Administrador {
     //Getters y Setters
 
     public int getIdUserAdmin() {
-        return idAdmin;
+        return id_admin;
     }
 
     public void setIdUserAdmin(int id_admin) {
-        this.idAdmin = id_admin;
+        this.id_admin = id_admin;
     }
 
     public String getUsername() {

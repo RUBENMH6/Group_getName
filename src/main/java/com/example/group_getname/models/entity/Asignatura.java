@@ -4,23 +4,23 @@ package com.example.group_getname.models.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="asignatura",uniqueConstraints = {@UniqueConstraint(columnNames = {"idProfesor", "idCurso", "idHorario"})})
+@Table(name="asignatura",uniqueConstraints = {@UniqueConstraint(columnNames = {"id_profesor", "id_curso", "id_horario"})})
 public class Asignatura {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idAsignatura")
-    private int idAsignatura;
+    @Column(name = "id_asignatura")
+    private int id_asignatura;
 
-    @Column(name = "idProfesor", nullable = false)
-    private int idProfesor;
+    @Column(name = "id_profesor", nullable = false)
+    private int id_profesor;
 
 
-    @Column(name = "idCurso", nullable = false)
-    private int idCurso;
+    @Column(name = "id_curso", nullable = false)
+    private int id_curso;
 
-    @Column(name = "idHorario", nullable = false)
-    private int idHorario;
+    @Column(name = "id_horario", nullable = false)
+    private int id_horario;
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
@@ -33,30 +33,27 @@ public class Asignatura {
     //Relaciones
 
     @ManyToOne
-    @JoinColumn(name = "idProfesor", insertable = false, updatable = false)
+    @JoinColumn(name = "id_profesor", insertable = false, updatable = false)
     private Profesor profesor;
 
     @ManyToOne
-    @JoinColumn(name = "idCurso", insertable = false, updatable = false)
+    @JoinColumn(name = "id_curso", insertable = false, updatable = false)
     private Curso curso;
 
     @ManyToOne
-    @JoinColumn(name = "idHorario", insertable = false, updatable = false)
+    @JoinColumn(name = "id_horario", insertable = false, updatable = false)
     private Horario horario;
 
     //Constructor
 
 
-    public Asignatura(int idAsignatura, int idProfesor, int idCurso, int idHorario, String nombre, String color, Profesor profesor, Curso curso, Horario horario) {
-        this.idAsignatura = idAsignatura;
-        this.idProfesor = idProfesor;
-        this.idCurso = idCurso;
-        this.idHorario = idHorario;
+    public Asignatura(int id_asignatura, int id_profesor, int id_curso, int id_horario, String nombre, String color) {
+        this.id_asignatura = id_asignatura;
+        this.id_profesor = id_profesor;
+        this.id_curso = id_curso;
+        this.id_horario = id_horario;
         this.nombre = nombre;
         this.color = color;
-        this.profesor = profesor;
-        this.curso = curso;
-        this.horario = horario;
     }
 
     public Asignatura() {
@@ -64,36 +61,36 @@ public class Asignatura {
     }
 
     //Getters y Setters
-    public int getIdAsignatura() {
-        return idAsignatura;
+    public int getId_asignatura() {
+        return id_asignatura;
     }
 
-    public void setIdAsignatura(int idAsignatura) {
-        this.idAsignatura = idAsignatura;
+    public void setId_asignatura(int id_asignatura) {
+        this.id_asignatura = id_asignatura;
     }
 
-    public int getIdProfesor() {
-        return idProfesor;
+    public int getId_profesor() {
+        return id_profesor;
     }
 
-    public void setIdProfesor(int idProfesor) {
-        this.idProfesor = idProfesor;
+    public void setId_profesor(int id_profesor) {
+        this.id_profesor = id_profesor;
     }
 
-    public int getIdCurso() {
-        return idCurso;
+    public int getId_curso() {
+        return id_curso;
     }
 
-    public void setIdCurso(int idCurso) {
-        this.idCurso = idCurso;
+    public void setId_curso(int idCurso) {
+        this.id_curso = idCurso;
     }
 
-    public int getIdHorario() {
-        return idHorario;
+    public int getId_horario() {
+        return id_horario;
     }
 
-    public void setIdHorario(int idHorario) {
-        this.idHorario = idHorario;
+    public void setId_horario(int id_horario) {
+        this.id_horario = id_horario;
     }
 
     public String getNombre() {
@@ -112,11 +109,11 @@ public class Asignatura {
         this.color = color;
     }
 
-    public void setId(int idAsignatura) {
-        this.idAsignatura = idAsignatura;
+    public void setId(int id_asignatura) {
+        this.id_asignatura = id_asignatura;
     }
 
     public int getId() {
-        return idAsignatura;
+        return id_asignatura;
     }
 }

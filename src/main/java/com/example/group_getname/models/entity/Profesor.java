@@ -9,9 +9,9 @@ public class Profesor {
     //Columnas
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "idProfesor", nullable = false)
-    private int idProfesor;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_profesor", nullable = false)
+    private int id_profesor;
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
@@ -30,8 +30,8 @@ public class Profesor {
 
     //Constructores
 
-    public Profesor(int idProfesor, String nombre, String apellido, int telefono, String nif, String email) {
-        this.idProfesor = idProfesor;
+    public Profesor(int id_profesor, String nombre, String apellido, int telefono, String nif, String email) {
+        this.id_profesor = id_profesor;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -45,12 +45,12 @@ public class Profesor {
 
     //Getters y Setters
 
-    public int getIdProfesor() {
-        return idProfesor;
+    public int getId_profesor() {
+        return id_profesor;
     }
 
-    public void setIdProfesor(int id_profesor) {
-        this.idProfesor = id_profesor;
+    public void setId_profesor(int id_profesor) {
+        this.id_profesor = id_profesor;
     }
 
     public String getNombre() {
