@@ -21,7 +21,7 @@
                     <a class="nav-link" th:href="@{/profesores}">Profesores</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/estudiantes}">Estudiantes</a>
+                    <a class="nav-link" th:href="@{/estudiantes}" style="color: white" >Estudiantes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/horarios}">Horarios</a>
@@ -36,12 +36,17 @@
 
             </ul>
         </div>
-        <form class="form-inline ml-auto" th:action="@{/estudiante/create}" sec:authorize="hasRole('ADMIN')">
-            <button class="btn btn-outline-light" type="submit"> Añadir estudiante</button>
-        </form>
-        <form class="form-inline ml-auto" th:action="@{/logout}" method="post">
-            <button class="btn btn-outline-light" type="submit">Logout</button>
-        </form>
+        <div class="justify-content-end" style="padding-right: 0.5rem;">
+            <form class="md-2" th:action="@{/estudiante/create}" sec:authorize="hasRole('ADMIN')">
+                <button class="btn btn-outline-light" type="submit">Añadir estudiante</button>
+            </form>
+        </div>
+        <div class="justify-content-end">
+
+            <form class="md-2" th:action="@{/logout}" method="post">
+                <button class="btn btn-outline-light" type="submit">Logout</button>
+            </form>
+        </div>
 
     </div>
 </nav>
