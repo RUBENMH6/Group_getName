@@ -2,6 +2,7 @@ package com.example.group_getname.models.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.sql.Time;
 
@@ -24,7 +25,7 @@ public class Horario {
     @Column(name = "tiempo_acaba", nullable = false)
     private Time tiempo_acaba;
     @Column(name = "dia", nullable = false)
-    private Date dia;
+    private LocalDate dia;
 
     //Relaciones
     @ManyToOne
@@ -32,7 +33,7 @@ public class Horario {
     private Asignatura asignatura;
 
     //Constructores
-    public Horario(int id_horario, int id_asignatura, Time tiempo_empieza, Time tiempo_acaba, Date dia) {
+    public Horario(int id_horario, int id_asignatura, Time tiempo_empieza, Time tiempo_acaba, LocalDate dia) {
         this.id_horario = id_horario;
         this.id_asignatura = id_asignatura;
         this.tiempo_empieza = tiempo_empieza;
@@ -77,11 +78,11 @@ public class Horario {
         this.tiempo_acaba = tiempo_acaba;
     }
 
-    public Date getDia() {
+    public LocalDate getDia() {
         return dia;
     }
 
-    public void setDia(Date dia) {
+    public void setDia(LocalDate dia) {
         this.dia = dia;
     }
 }
