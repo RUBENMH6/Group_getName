@@ -4,7 +4,7 @@ package com.example.group_getname.models.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="asignatura",uniqueConstraints = {@UniqueConstraint(columnNames = {"id_profesor", "id_curso", "id_horario"})})
+@Table(name="asignatura" ,uniqueConstraints = {@UniqueConstraint(columnNames = {"id_profesor", "id_curso", "id_horario"})})
 public class Asignatura {
 
     @Id
