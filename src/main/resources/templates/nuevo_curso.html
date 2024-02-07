@@ -47,12 +47,13 @@
 
     <div class="row">
         <div class="col-md-6">
-            <form th:action="@{/estudiante/create}" method="post">
-                <label for="nombre">Nombre:</label><input type="text" class="form-control" id="nombre" name="nombre" required>
-                <label for="apellido">Apellido:</label><input type="text" class="form-control" id="apellido" name="apellido" required>
-                <label for="telefono">Teléfono:</label><input type="text" class="form-control" id="telefono" name="telefono" required>
-                <label for="nif">NIF:</label><input type="text" class="form-control" id="nif" name="nif" required>
-                <label for="email">Email:</label><input type="email" class="form-control" id="email" name="email" required>
+            <form th:action="@{/curso/create}" method="post">
+                <label for="id_curso">id_curso:</label><input type="text" class="form-control" id="id_curso" name="id_curso" required>
+                <label for="nombre">nombre:</label><input type="text" class="form-control" id="nombre" name="nombre" required>
+                <label for="descripcion">descripcion:</label><input type="text" class="form-control" id="descripcion" name="descripcion" required>
+                <label for="fecha_inicio">fecha_inicio:</label><input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" required>
+                <label for="fecha_fin">fecha_fin:</label><input type="date" class="form-control" id="fecha_fin" name="fecha_fin" required>
+                <label for="activo">activo:</label><input type="text" class="form-control" id="activo" name="activo" required>
                 <div class="row justify-content-center">
                     <div class="col-md-6 justify-content-center">
                         <div class="mt-2 text-center">
