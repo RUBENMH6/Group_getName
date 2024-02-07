@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Lista de Estudiantes</title>
@@ -21,10 +21,33 @@
                     <a class="nav-link" th:href="@{/profesores}">Profesores</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/estudiantes}">Estudiantes</a>
+                    <a class="nav-link" th:href="@{/estudiantes}" style="color: white" >Estudiantes</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/horarios}">Horarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/asignaturas}">Asignaturas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
+                </li>
+
+
             </ul>
         </div>
+        <div class="justify-content-end" style="padding-right: 0.5rem;">
+            <form class="md-2" th:action="@{/estudiante/create}" sec:authorize="hasRole('ADMIN')">
+                <button class="btn btn-outline-light" type="submit">Añadir estudiante</button>
+            </form>
+        </div>
+        <div class="justify-content-end">
+
+            <form class="md-2" th:action="@{/logout}" method="post">
+                <button class="btn btn-outline-light" type="submit">Logout</button>
+            </form>
+        </div>
+
     </div>
 </nav>
 <div class="container mt-4">
@@ -42,6 +65,9 @@
                     <th scope="col">NIF</th>
                     <th scope="col">Email</th>
                     <th scope="col">Fecha registro</th>
+                    <th>
+                        <div class="justify-content-center align-items-center" sec:authorize="hasRole('ADMIN')"/>
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,6 +79,13 @@
                     <td th:text="${estudiante.nif}"></td>
                     <td th:text="${estudiante.email}"></td>
                     <td th:text="${estudiante.dateRegistered}"></td>
+                    <td>
+                        <div class="justify-content-center align-items-center" sec:authorize="hasRole('ADMIN')">
+                            <button class="btn btn-primary btn-dark" style="width: 7rem; height: 2.5rem;" th:href="@{/asignatura/${estudiante.id_estudiante}}" method="post">
+                                Modificar
+                            </button>
+                        </div>
+                    </td>
                 </tr>
                 </tbody>
             </table>

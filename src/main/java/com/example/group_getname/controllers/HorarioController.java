@@ -1,6 +1,6 @@
 package com.example.group_getname.controllers;
 
-import com.example.group_getname.services.CursoService;
+import com.example.group_getname.models.entity.Horario;
 import com.example.group_getname.services.HorarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,9 +13,15 @@ public class HorarioController {
     @Autowired
     private HorarioService horarioService;
 
-    @GetMapping("/horario")
+    @GetMapping("/horarios")
     public String horarios(Model model){
         model.addAttribute("horario", horarioService.findAll());
-        return "horarios";
+        return "horario";
+    }
+
+    @GetMapping("/horario/create")
+    private String nuevoHorario(Model model) {
+        model.addAttribute("horario", new Horario());
+        return "nuevo_horario";
     }
 }

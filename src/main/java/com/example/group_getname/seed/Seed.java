@@ -2,12 +2,15 @@ package com.example.group_getname.seed;
 
 import com.example.group_getname.models.entity.*;
 import com.example.group_getname.repository.*;
+import com.example.group_getname.services.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.Time;
 import java.time.LocalDate;
 import java.util.Date;
 
 public class Seed {
+    private UsuarioRepository usuarioRepository;
     private AsignaturaRepository asignaturaRepository;
     private CursoRepository cursoRepository;
     private HorarioRepository horarioRepository;
@@ -15,7 +18,9 @@ public class Seed {
     private MatriculaRepository matriculaRepository;
     private ProfesorRepository profesorRepository;
 
-    public Seed(AsignaturaRepository asignaturaRepository, CursoRepository cursoRepository, HorarioRepository horarioRepository, EstudianteRepository estudianteRepository, MatriculaRepository matriculaRepository, ProfesorRepository profesorRepository) {
+    private UsuarioService usuarioService;
+    public Seed(UsuarioRepository usuarioRepository, AsignaturaRepository asignaturaRepository, CursoRepository cursoRepository, HorarioRepository horarioRepository, EstudianteRepository estudianteRepository, MatriculaRepository matriculaRepository, ProfesorRepository profesorRepository) {
+        this.usuarioRepository = usuarioRepository;
         this.asignaturaRepository = asignaturaRepository;
         this.cursoRepository = cursoRepository;
         this.horarioRepository = horarioRepository;
@@ -25,11 +30,23 @@ public class Seed {
     }
 
     public void generateSeeds(){
+
+        //Usuario
+        Usuario user1 = new Usuario(1, "ruben", "Ruben", "Martinez","test123","ruben@gmail.com","STUDENT");
+        Usuario user2 = new Usuario(2, "pedro", "Pedro", "Segarra","test123","pedro@gmail.com","TEACHER");
+        Usuario user3 = new Usuario(3, "admin", "Admin", "","admin","admin@gmail.com","ADMIN");
+        Usuario user4 = new Usuario(4, "test", "test", "","test","admin@gmail.com","ADMIN");
+
+        usuarioRepository.save(user1);
+        usuarioRepository.save(user2);
+        usuarioRepository.save(user3);
+        usuarioRepository.save(user4);
+
         //Cursos
-        Curso curso1 = new Curso(1,"1CFS", "DAM", LocalDate.of(2023,9,10), LocalDate.of(2024,5,20), 1);
-        Curso curso2 = new Curso(2, "2CFS", "DAW", LocalDate.of(2023,9,10),  LocalDate.of(2024,5,20), 1);
-        Curso curso3 = new Curso(3, "3CFS", "DAM", LocalDate.of(2023,9,10), LocalDate.of(2024,5,20), 1);
-        Curso curso4 = new Curso(4, "4CFS", "DAW", LocalDate.of(2023,9,10),  LocalDate.of(2024,5,20), 1);
+        Curso curso1 = new Curso(1,"1CFS", "DAM", LocalDate.of(2023,9,10), LocalDate.of(2024,5,21), 1);
+        Curso curso2 = new Curso(2, "2CFS", "DAW", LocalDate.of(2023,9,11),  LocalDate.of(2024,5,22), 1);
+        Curso curso3 = new Curso(3, "3CFS", "DAM", LocalDate.of(2023,9,12), LocalDate.of(2024,5,23), 1);
+        Curso curso4 = new Curso(4, "4CFS", "DAW", LocalDate.of(2023,9,13),  LocalDate.of(2024,5,24), 1);
 
         cursoRepository.save(curso1);
         cursoRepository.save(curso2);
@@ -58,11 +75,11 @@ public class Seed {
         Horario horario4 = new Horario(4,1,new Time(15000), new Time(25000), new Date(2023,9,10));
         Horario horario5 = new Horario(5,1,new Time(15000), new Time(25000), new Date(2023,9,10));
 
-//        horarioRepository.save(horario1);
-//        horarioRepository.save(horario2);
-//        horarioRepository.save(horario3);
-//        horarioRepository.save(horario4);
-//        horarioRepository.save(horario5);
+        horarioRepository.save(horario1);
+        horarioRepository.save(horario2);
+        horarioRepository.save(horario3);
+        horarioRepository.save(horario4);
+        horarioRepository.save(horario5);
 
 
 
@@ -92,6 +109,15 @@ public class Seed {
 //        matriculaRepository.save(matricula4);
 //        matriculaRepository.save(matricula5);
 
+        Asignatura asignatura1 = new Asignatura(1, 1, 1, 1,"Acceso a datos", "Verde");
+        Asignatura asignatura2 = new Asignatura(2, 2, 2, 2,"Interfaces", "Verde");
+        Asignatura asignatura3 = new Asignatura(3, 3, 3, 3,"Multimedia", "Verde");
+        Asignatura asignatura4 = new Asignatura(4, 4, 4, 4,"Empresa", "Verde");
+
+        asignaturaRepository.save(asignatura1);
+        asignaturaRepository.save(asignatura2);
+        asignaturaRepository.save(asignatura3);
+        asignaturaRepository.save(asignatura4);
 
     }
 
