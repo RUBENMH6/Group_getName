@@ -22,6 +22,6 @@ public class HorarioController {
     @GetMapping("/horario/create")
     private String nuevoHorario(Model model) {
         model.addAttribute("horario", new Horario());
-        return "nuevo_horario";
+        return "create/nuevo_horario";
     }
 }

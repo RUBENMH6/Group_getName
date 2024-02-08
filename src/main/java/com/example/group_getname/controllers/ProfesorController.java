@@ -22,6 +22,6 @@ public class ProfesorController {
     @GetMapping("/profesor/create")
     private String nuevoProfesor(Model model) {
         model.addAttribute("profesor", new Profesor());
-        return "nuevo_profesor";
+        return "create/nuevo_profesor";
     }
 }
