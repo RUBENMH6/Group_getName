@@ -24,4 +24,10 @@ public class HorarioController {
         model.addAttribute("horario", new Horario());
         return "create/nuevo_horario";
     }
+
+    @GetMapping("/horario/update")
+    private String modificarHorario(Model model) {
+        model.addAttribute("horario", new Horario());
+        return "update/modificar_horario";
+    }
 }
