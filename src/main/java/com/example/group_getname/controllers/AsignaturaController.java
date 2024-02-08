@@ -24,7 +24,13 @@ public class AsignaturaController  {
     @GetMapping("/asignatura/create")
     private String nuevoAsignatura(Model model) {
         model.addAttribute("asignatura", new Asignatura());
-        return "nueva_asignatura";
+        return "create/nueva_asignatura";
+    }
+
+    @GetMapping("/asignatura/update")
+    private String updateAsignatura(Model model) {
+        model.addAttribute("asignatura", new Asignatura());
+        return "update/modificar_asignatura";
     }
 
     @PostMapping("/asignatura/create")
