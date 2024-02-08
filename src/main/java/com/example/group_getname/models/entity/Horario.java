@@ -3,6 +3,7 @@ package com.example.group_getname.models.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 import java.sql.Time;
 
@@ -21,9 +22,9 @@ public class Horario {
     private int id_asignatura;
 
     @Column(name = "tiempo_empieza", nullable = false)
-    private Time tiempo_empieza;
+    private LocalTime tiempo_empieza;
     @Column(name = "tiempo_acaba", nullable = false)
-    private Time tiempo_acaba;
+    private LocalTime tiempo_acaba;
     @Column(name = "dia", nullable = false)
     private LocalDate dia;
 
@@ -33,7 +34,7 @@ public class Horario {
     private Asignatura asignatura;
 
     //Constructores
-    public Horario(int id_horario, int id_asignatura, Time tiempo_empieza, Time tiempo_acaba, LocalDate dia) {
+    public Horario(int id_horario, int id_asignatura, LocalTime tiempo_empieza, LocalTime tiempo_acaba, LocalDate dia) {
         this.id_horario = id_horario;
         this.id_asignatura = id_asignatura;
         this.tiempo_empieza = tiempo_empieza;
@@ -62,19 +63,19 @@ public class Horario {
         this.id_asignatura = id_asignatura;
     }
 
-    public Time getTiempo_empieza() {
+    public LocalTime getTiempo_empieza() {
         return tiempo_empieza;
     }
 
-    public void setTiempo_empieza(Time tiempo_empieza) {
+    public void setTiempo_empieza(LocalTime tiempo_empieza) {
         this.tiempo_empieza = tiempo_empieza;
     }
 
-    public Time getTiempo_acaba() {
+    public LocalTime getTiempo_acaba() {
         return tiempo_acaba;
     }
 
-    public void setTiempo_acaba(Time tiempo_acaba) {
+    public void setTiempo_acaba(LocalTime tiempo_acaba) {
         this.tiempo_acaba = tiempo_acaba;
     }
 
