@@ -1,6 +1,7 @@
 package com.example.group_getname.configuration;
 
 
+import com.example.group_getname.models.entity.Roles;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -46,7 +47,7 @@ public class MainSecurityConfig {
                         configurer
                                 .requestMatchers("/registro").permitAll()
                                 .requestMatchers("/usuarios/**").hasRole("ADMIN")
-                                .requestMatchers("/nuev**/**").hasRole("ADMIN")
+                                .requestMatchers("/*?/create").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 ).exceptionHandling(configurer ->
                         configurer

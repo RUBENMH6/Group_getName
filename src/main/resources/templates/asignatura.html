@@ -28,16 +28,25 @@
                     <a class="nav-link" th:href="@{/horarios}">Horarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/asignaturas}">Asignaturas</a>
+                    <a class="nav-link" th:href="@{/asignaturas}" style="color: white" >Asignaturas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
                 </li>
             </ul>
         </div>
-        <form class="form-inline ml-auto" th:action="@{/logout}" method="post">
-            <button class="btn btn-outline-light" type="submit">Logout</button>
-        </form>
+        <div class="justify-content-end" style="padding-right: 0.5rem;">
+            <form class="md-2" th:action="@{/asignatura/create}" sec:authorize="hasRole('ADMIN')">
+                <button class="btn btn-outline-light" type="submit">Añadir asignatura</button>
+            </form>
+        </div>
+        <div class="justify-content-end">
+
+            <form class="md-2" th:action="@{/logout}" method="post">
+                <button class="btn btn-outline-light" type="submit">Logout</button>
+            </form>
+        </div>
+
 
     </div>
 </nav>
@@ -56,11 +65,8 @@
                     <th scope="col">Profesor</th>
                     <th scope="col">Color</th>
                     <th>
-                        <div class="justify-content-center align-items-center" sec:authorize="hasRole('ADMIN')">
-
-                        </div>
+                        <div class="justify-content-center align-items-center" sec:authorize="hasRole('ADMIN')"/>
                     </th>
-
                 </tr>
                 </thead>
                 <tbody>

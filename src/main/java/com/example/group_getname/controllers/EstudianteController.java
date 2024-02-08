@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class EstudianteController {
@@ -19,9 +21,15 @@ public class EstudianteController {
         return "estudiante";
     }
 
-    @GetMapping("/nuevo_estudiante")
+    @GetMapping("/estudiante/create")
     private String nuevoEstudiante(Model model) {
         model.addAttribute("estudiante", new Estudiante());
         return "nuevo_estudiante";
+    }
+
+    @PostMapping("/estudiante/create")
+    private String guardarEstudiante(@ModelAttribute Estudiante estudiante) {
+        estudianteService.create(estudiante);
+        return "redirect:/estudiantes";
     }
 }

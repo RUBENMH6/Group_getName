@@ -38,7 +38,7 @@ public class Estudiante {
     @Column(name="nif", nullable = false)
     private String nif;
 
-    @Column(name="date_registered", nullable = false)
+    @Column(name="date_registered")
     private LocalDate date_registered;
 
 
