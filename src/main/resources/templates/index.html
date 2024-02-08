@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor - Learning Today, Leading Tomorrow</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Optional custom CSS -->
+ <!--  no se conecta   <link rel="stylesheet" href="/styles.css"> -->
+<style>
+    .navbar-custom {
+    background-color: #333; /* You can change the color to match the navbar color */
+    }
+    .jumbotron-custom {
+    //  background-image: url('');
+    background-size: cover;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    }
+
+    /* Estilos para las tarjetas de cursos */
+    .profile-card {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .profile-card .profile-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: -50px auto 10px;
+    }
+    .card-course {
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .card-course:hover {
+        transform: translateY(-5px);
+    }
+    .footer-section {
+        background-color: #f8f9fa;
+        padding: 20px 0;
+    }
+    .footer-section .row > div {
+        margin-bottom: 20px;
+    }
+
+    .footer-section {
+        padding: 40px 0;
+        background-color: #333; /* Color de fondo del footer */
+    }
+
+    .footer-section h5 {
+        color: #fff; /* Color del título del footer */
+        margin-bottom: 20px;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .footer-section ul li a {
+        color: rgba(255, 255, 255, 0.7); /* Color de los enlaces del footer */
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+        color: #fff; /* Color de los enlaces del footer al pasar el mouse */
+    }
+
+    .footer-section .form-control {
+        background-color: #1f1f1f; /* Fondo del input del formulario */
+        border: none;
+        border-radius: 0;
+        color: #eee; /* Color del texto del input */
+        padding: 10px;
+    }
+
+    .footer-section .btn-primary {
+        border: none;
+        background-color: #e8491d; /* Color de fondo del botón de suscripción */
+        padding: 10px 20px;
+    }
+
+    .footer-section .btn-primary:hover {
+        background-color: #333; /* Color de fondo del botón de suscripción al pasar el mouse */
+    }
+
+    .footer-section p {
+        color: rgba(255, 255, 255, 0.5); /* Color del texto del copyright */
+    }
+
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container">
+        <a class="navbar-brand" href="#">MENTOR</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Drop Down
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Drop Down 1</a>
+                        <a class="dropdown-item" href="#">Drop Down 2</a>
+                        <a class="dropdown-item" href="#">Drop Down 3</a>
+                        <a class="dropdown-item" href="#">Drop Down 4</a>
+                    </div>
+                </li>
+                <!-- More nav items -->
+            </ul>
+            <button class="btn btn-success my-2 my-sm-0" type="submit">Get Started</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid jumbotron-custom">
+    <div class="container text-center">
+        <h1 class="display-4">Learning Today, Leading Tomorrow</h1>
+        <p class="lead">We are team of talented designers making websites with Bootstrap</p>
+        <button class="btn btn-success btn-lg" type="submit">Get Started</button>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <h2>POPULAR COURSES</h2>
+    <div class="row">
+        <!-- Repite este bloque para cada curso -->
+        <div class="col-md-4">
+            <div class="card card-course">
+                <img src="curso_imagen.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Course Title</h5>
+                    <p class="card-text">Course description.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Course Price</small>
+                </div>
+            </div>
+        </div>
+        <!-- ... -->
+    </div>
+
+    <div class="row">
+        <!-- Repite este bloque para cada perfil -->
+        <div class="col-md-4">
+            <div class="card profile-card">
+                <img src="profile_photo.jpg" class="profile-photo" alt="Profile">
+                <div class="card-body">
+                    <h5 class="card-title">Profile Name</h5>
+                    <p class="card-text">Profile description or title.</p>
+                </div>
+            </div>
+        </div>
+        <!-- ... -->
+    </div>
+</div>
+
+<!--  Footer  -->
+
+<footer class="footer-section bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h5>Mentor</h5>
+                <ul class="list-unstyled">
+                    <li>1234 Adam Street</li>
+                    <li>New York, NY 535022</li>
+                    <li>Phone: +1 555-888-99</li>
+                    <li>Email: info@example.com</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Useful Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="#" class="text-white">About Us</a></li>
+                    <li><a href="#" class="text-white">Services</a></li>
+                    <li><a href="#" class="text-white">Terms of Service</a></li>
+                    <li><a href="#" class="text-white">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Our Services</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Web Design</a></li>
+                    <li><a href="#" class="text-white">Marketing</a></li>
+                    <li><a href="#" class="text-white">Product Management</a></li>
+                    <li><a href="#" class="text-white">Graphic Design</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Join Our Newsletter</h5>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Enter email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p>&copy; 2024 Mentor. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Bootstrap and jQuery scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

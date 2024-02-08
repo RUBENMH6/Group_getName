@@ -50,3 +50,39 @@ body {
     border-radius: 4px;
     cursor: pointer;
 }
+
+.navbar-custom {
+    background-color: #333; /* You can change the color to match the navbar color */
+}
+.jumbotron-custom {
+//  background-image: url('');
+    background-size: cover;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Estilos para las tarjetas de cursos */
+.card-course {
+    margin-bottom: 20px;
+}
+.card-course .card-body {
+    padding: 10px;
+}
+
+/* Estilos para las tarjetas de perfil */
+.profile-card {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.profile-card .profile-photo {
+    margin-bottom: 10px;
+}
+
+/* Estilos para la sección de pie de página */
+.footer-section {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+.footer-section .row > div {
+    margin-bottom: 20px;
+}
