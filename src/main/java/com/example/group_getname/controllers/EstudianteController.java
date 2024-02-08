@@ -27,6 +27,12 @@ public class EstudianteController {
         return "create/nuevo_estudiante";
     }
 
+    @GetMapping("/estudiante/update")
+    private String modificarEstudiante(Model model) {
+        model.addAttribute("estudiante", new Estudiante());
+        return "update/modificar_estudiante";
+    }
+
     @PostMapping("/estudiante/create")
     private String guardarEstudiante(@ModelAttribute Estudiante estudiante) {
         estudianteService.create(estudiante);
