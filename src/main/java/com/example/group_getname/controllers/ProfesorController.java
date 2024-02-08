@@ -1,16 +1,16 @@
 package com.example.group_getname.controllers;
 
 
+import com.example.group_getname.models.entity.Asignatura;
 import com.example.group_getname.models.entity.Curso;
 import com.example.group_getname.models.entity.Profesor;
 import com.example.group_getname.services.ProfesorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @Controller
 public class ProfesorController {
@@ -28,22 +28,25 @@ public class ProfesorController {
         model.addAttribute("profesor", new Profesor());
         return "create/nuevo_profesor";
     }
-/*
-    @GetMapping("/profesor/update")
-    private String modificarProfesor(@ModelAttribute Model model, @RequestParam Profesor profesor) {
-        model.addAttribute("profesor", profesor);
+
+    @GetMapping("/profesor/{id}/update")
+    public String mostrarModificarProfesor(@PathVariable int id, Model model) {
+        Optional<Profesor> profesor = profesorService.findById(id);
+        model.addAttribute("profesor", profesor.orElse(null));
         return "update/modificar_profesor";
-    }*/
+    }
 
     @PostMapping("/profesor/create")
     private String crearProfesor(@ModelAttribute Profesor profesor) {
         profesorService.create(profesor);
         return "redirect:/profesores";
     }
-/*
-    @PostMapping("/curso/update")
-    private String modificarCurso(@ModelAttribute Profesor profesor) {
+
+    @PostMapping("/profesor/{id}/update")
+    private String modificarProfesor(@PathVariable int id, @ModelAttribute Profesor profesor) {
+        profesor.setId_profesor(id);
         profesorService.update(profesor);
         return "redirect:/profesores";
-    }*/
+    }
+
 }

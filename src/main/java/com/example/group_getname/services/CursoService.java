@@ -36,7 +36,7 @@ public class CursoService implements ICursoService{
         newCurso.setFecha_inicio(curso.getFecha_inicio());
         newCurso.setFecha_fin(curso.getFecha_fin());
         newCurso.setActivo(curso.getActivo());
-        return newCurso;
+        return cursoRepository.save(newCurso);
     }
 
     @Override
