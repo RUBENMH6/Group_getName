@@ -24,7 +24,7 @@ public class EstudianteController {
     @GetMapping("/estudiante/create")
     private String nuevoEstudiante(Model model) {
         model.addAttribute("estudiante", new Estudiante());
-        return "nuevo_estudiante";
+        return "create/nuevo_estudiante";
     }
 
     @PostMapping("/estudiante/create")
