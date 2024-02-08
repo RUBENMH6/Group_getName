@@ -38,10 +38,15 @@ public class EstudianteService implements IEstudianteService{
     @Override
     public Estudiante update(Estudiante estudiante) {
         Estudiante newEstudiante = this.estudianteRepository.findById(estudiante.getId_estudiante()).get();
+        newEstudiante.setUsername(estudiante.getUsername());
+        newEstudiante.setPassword(estudiante.getPassword());
         newEstudiante.setNombre(estudiante.getNombre());
         newEstudiante.setApellido(estudiante.getApellido());
         newEstudiante.setNif(estudiante.getNif());
-        return newEstudiante;
+        newEstudiante.setTelefono(estudiante.getTelefono());
+        newEstudiante.setEmail(estudiante.getEmail());
+        newEstudiante.setDateRegistered(estudiante.getDateRegistered());
+        return estudianteRepository.save(newEstudiante);
     }
 
     @Override
