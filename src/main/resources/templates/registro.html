@@ -26,8 +26,8 @@
 </nav>
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <h1 class="h3 mb-3 fw-normal">Crea una cuenta</h1>
         <form th:action="@{/usuario/create}"  method="post" class="col-md-6">
+            <h1 class="h3 mb-3 fw-normal">Crea una cuenta</h1>
             <div class="form-floating">
                 <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" required>
                 <label for="nombre">Nombre</label>
