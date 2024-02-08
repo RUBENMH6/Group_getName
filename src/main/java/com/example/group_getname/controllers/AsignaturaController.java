@@ -27,17 +27,10 @@ public class AsignaturaController  {
     }
 
     @GetMapping("/asignatura/{id}/update")
-    public String mostrarFormularioEditar(@PathVariable int id, Model model) {
+    public String mostrarModificarAsignatura(@PathVariable int id, Model model) {
         Optional<Asignatura> asignatura = asignaturaService.findById(id);
         model.addAttribute("asignatura", asignatura.orElse(null));
         return "update/modificar_asignatura";
-    }
-
-    @PostMapping("/asignatura/{id}/update")
-    private String modificarAsignatura(@PathVariable int id, @ModelAttribute Asignatura asignatura) {
-        asignatura.setId_asignatura(id); // Asegúrate de establecer el ID de la asignatura
-        asignaturaService.update(asignatura);
-        return "redirect:/asignaturas";
     }
 
     @PostMapping("/asignatura/create")
@@ -45,6 +38,15 @@ public class AsignaturaController  {
         asignaturaService.create(asignatura);
         return "redirect:/asignaturas";
     }
+
+    @PostMapping("/asignatura/{id}/update")
+    private String modificarAsignatura(@PathVariable int id, @ModelAttribute Asignatura asignatura) {
+        asignatura.setId_asignatura(id);
+        asignaturaService.update(asignatura);
+        return "redirect:/asignaturas";
+    }
+
+
 
 
 

@@ -77,9 +77,9 @@
                     <td th:text="${curso.activo == 1 ? 'Activo' : 'Inactivo'}"></td>
                     <td>
                         <div class="justify-content-center align-items-center" sec:authorize="hasRole('ADMIN')">
-                            <button class="btn btn-primary btn-dark" style="width: 7rem; height: 2.5rem;" th:href="@{/horario/${horario.id_horario}}" method="post">
+                            <a class="btn btn-primary btn-dark" style="width: 7rem; height: 2.5rem;" th:href="@{'/curso/' + ${curso.id_curso} + '/update'}">
                                 Modificar
-                            </button>
+                            </a>
                         </div>
                     </td>
                 </tr>
