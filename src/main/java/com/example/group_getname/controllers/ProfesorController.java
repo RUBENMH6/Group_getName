@@ -1,7 +1,6 @@
 package com.example.group_getname.controllers;
 
 
-import com.example.group_getname.models.entity.Horario;
 import com.example.group_getname.models.entity.Profesor;
 import com.example.group_getname.services.ProfesorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +22,6 @@ public class ProfesorController {
     @GetMapping("/profesor/create")
     private String nuevoProfesor(Model model) {
         model.addAttribute("profesor", new Profesor());
-        return "nuevo_profesor";
+        return "create/nuevo_profesor";
     }
 }
