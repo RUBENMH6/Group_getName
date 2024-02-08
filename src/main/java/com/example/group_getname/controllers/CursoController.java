@@ -23,7 +23,7 @@ public class CursoController {
         }
 
         @GetMapping("/curso/create")
-        private String nuevoCurso(@RequestParam Model model) {
+        private String nuevoCurso(Model model) {
             model.addAttribute("curso", new Curso());
             return "create/nuevo_curso";
         }
