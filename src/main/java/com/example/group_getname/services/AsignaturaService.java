@@ -36,7 +36,11 @@ public class AsignaturaService implements IAsignaturaService {
     @Override
     public Asignatura update(Asignatura asignatura) {
         Asignatura newAsignatura = asignaturaRepository.findById(asignatura.getId()).get();
+        newAsignatura.setId_profesor(asignatura.getId_profesor());
+        newAsignatura.setId_curso(asignatura.getId_curso());
+        newAsignatura.setId_horario(asignatura.getId_horario());
         newAsignatura.setNombre(asignatura.getNombre());
+        newAsignatura.setColor(asignatura.getColor());
         return asignaturaRepository.save(newAsignatura);
     }
 

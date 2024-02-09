@@ -1,14 +1,14 @@
 package com.example.group_getname.controllers;
 
+import com.example.group_getname.models.entity.Asignatura;
 import com.example.group_getname.models.entity.Curso;
 import com.example.group_getname.services.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @Controller
 public class CursoController {
@@ -23,14 +23,15 @@ public class CursoController {
         }
 
         @GetMapping("/curso/create")
-        private String nuevoCurso(@RequestParam Model model) {
+        private String nuevoCurso(Model model) {
             model.addAttribute("curso", new Curso());
             return "create/nuevo_curso";
         }
 
-        @GetMapping("/curso/update")
-        private String modificarCurso(@ModelAttribute Model model, @RequestParam Curso curso) {
-            model.addAttribute("curso", curso);
+        @GetMapping("/curso/{id}/update")
+        private String mostrarModificarCurso(@PathVariable int id, Model model) {
+            Optional<Curso> curso = cursoService.findById(id);
+            model.addAttribute("curso", curso.orElse(null));
             return "update/modificar_curso";
         }
 
@@ -40,11 +41,14 @@ public class CursoController {
             return "redirect:/cursos";
         }
 
-        @PostMapping("/curso/update")
-        private String modificarCurso(@ModelAttribute Curso curso) {
-        cursoService.update(curso);
-        return "redirect:/cursos";
+        @PostMapping("/curso/{id}/update")
+        private String modificarCurso(@PathVariable int id, @ModelAttribute Curso curso) {
+            curso.setId_curso(id);
+            cursoService.update(curso);
+            return "redirect:/cursos";
         }
+
+
 
 }
 

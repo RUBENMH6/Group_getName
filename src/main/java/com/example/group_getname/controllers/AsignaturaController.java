@@ -5,10 +5,9 @@ import com.example.group_getname.services.AsignaturaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @Controller
 public class AsignaturaController  {
@@ -27,9 +26,10 @@ public class AsignaturaController  {
         return "create/nueva_asignatura";
     }
 
-    @GetMapping("/asignatura/update")
-    private String updateAsignatura(Model model) {
-        model.addAttribute("asignatura", new Asignatura());
+    @GetMapping("/asignatura/{id}/update")
+    public String mostrarModificarAsignatura(@PathVariable int id, Model model) {
+        Optional<Asignatura> asignatura = asignaturaService.findById(id);
+        model.addAttribute("asignatura", asignatura.orElse(null));
         return "update/modificar_asignatura";
     }
 
@@ -39,9 +39,15 @@ public class AsignaturaController  {
         return "redirect:/asignaturas";
     }
 
-    @PutMapping("/asignatura/update")
-    private String modificarAsignatura(@ModelAttribute Asignatura asignatura) {
+    @PostMapping("/asignatura/{id}/update")
+    private String modificarAsignatura(@PathVariable int id, @ModelAttribute Asignatura asignatura) {
+        asignatura.setId_asignatura(id);
         asignaturaService.update(asignatura);
-        return "redirect:/asignatura";
+        return "redirect:/asignaturas";
     }
+
+
+
+
+
 }

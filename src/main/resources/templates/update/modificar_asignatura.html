@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Añadir Estudiante</title>
+    <title>Modificar Estudiante</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
@@ -48,12 +48,13 @@
 
     <div class="row">
         <div class="col-md-6">
-            <form th:action="@{/asignatura/update}" method="post">
-                    <label for="nombre">Nombre:</label><input type="text" class="form-control" id="nombre" name="nombre" required>
-                    <label for="curso">Curso:</label><input type="text" class="form-control" id="curso" name="curso" required>
-                    <label for="horario">Horario:</label><input type="text" class="form-control" id="horario" name="horario" required>
-                    <label for="profesor">Profesor:</label><input type="text" class="form-control" id="profesor" name="profesor" required>
-                    <label for="color">Color:</label><input type="email" class="form-control" id="color" name="color" required>
+            <form th:action="@{'/asignatura/' + ${asignatura.id_asignatura} + '/update'}" method="post" th:object="${asignatura}">
+                <input type="hidden" th:field="*{id_asignatura}" />
+                <label for="nombre">Nombre:</label><input type="text" class="form-control" id="nombre" name="nombre" th:field="*{nombre}" required>
+                <label for="id_curso">Curso:</label><input type="text" class="form-control" id="id_curso" name="id_curso" th:field="*{id_curso}" required>
+                <label for="id_horario">Horario:</label><input type="text" class="form-control" id="id_horario" name="id_horario" th:field="*{id_horario}" required>
+                <label for="id_profesor">Profesor:</label><input type="text" class="form-control" id="id_profesor" name="id_profesor" th:field="*{id_profesor}" required>
+                <label for="color">Color:</label><input type="text" class="form-control" id="color" name="color" th:field="*{color}" required>
                 <div class="row justify-content-center">
                     <div class="col-md-6 justify-content-center">
                         <div class="mt-2 text-center">
@@ -71,4 +72,3 @@
 
 </body>
 </html>
-<!--No terminado-->
