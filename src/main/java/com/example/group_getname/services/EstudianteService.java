@@ -45,7 +45,7 @@ public class EstudianteService implements IEstudianteService{
         newEstudiante.setNif(estudiante.getNif());
         newEstudiante.setTelefono(estudiante.getTelefono());
         newEstudiante.setEmail(estudiante.getEmail());
-        newEstudiante.setDateRegistered(estudiante.getDateRegistered());
+        //la fecha de registro y el id no se modifican.
         return estudianteRepository.save(newEstudiante);
     }
 
