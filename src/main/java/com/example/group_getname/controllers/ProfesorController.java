@@ -49,4 +49,10 @@ public class ProfesorController {
         return "redirect:/profesores";
     }
 
+    @DeleteMapping("/profesor/{id}/delete")
+    private String eliminarProfesor(@PathVariable int id) {
+        profesorService.delete(id);
+        return "redirect:/profesores";
+    }
+
 }

@@ -41,8 +41,6 @@ public class CursoService implements ICursoService{
 
     @Override
     public void delete(int id) {
-        Optional<Curso> curso= cursoRepository.findById(id);
-        System.out.println(curso);
         cursoRepository.deleteById(id);
     }
 }

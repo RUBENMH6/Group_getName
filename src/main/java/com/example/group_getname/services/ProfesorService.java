@@ -43,8 +43,6 @@ public class ProfesorService implements IProfesorService{
 
     @Override
     public void delete(int id) {
-        Optional<Profesor> profesor = profesorRepository.findById(id);
-        System.out.println(profesor);
         profesorRepository.deleteById(id);
     }
 }

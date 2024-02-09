@@ -48,6 +48,12 @@ public class CursoController {
             return "redirect:/cursos";
         }
 
+        @DeleteMapping("/curso/{id}/delete")
+        private String borrarCurso(@PathVariable int id) {
+            cursoService.delete(id);
+            return "redirect:/cursos";
+        }
+
 
 
 }
