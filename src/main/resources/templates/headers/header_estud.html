@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center"
      xmlns:sec="http://www.w3.org/1999/xhtml">
     <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/}">Group.getName()</a>
+        <a class="navbar-brand" th:href="@{/}">Universidad App</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -14,22 +14,24 @@
                     <a class="nav-link" th:href="@{/profesores}">Profesores</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/estudiantes}">Estudiantes</a>
+                    <a class="nav-link" th:href="@{/estudiantes}" style="color: white" >Estudiantes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/horarios}">Horarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/asignaturas}" style="color: white" >Asignaturas</a>
+                    <a class="nav-link" th:href="@{/asignaturas}">Asignaturas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
                 </li>
+
+
             </ul>
         </div>
         <div class="justify-content-end" style="padding-right: 0.5rem;">
-            <form class="md-2" th:action="@{/asignatura/create}" sec:authorize="hasRole('ADMIN')">
-                <button class="btn btn-outline-light" type="submit">Añadir asignatura</button>
+            <form class="md-2" th:action="@{/estudiante/create}" sec:authorize="hasRole('ADMIN')">
+                <button class="btn btn-outline-light" type="submit">Añadir estudiante</button>
             </form>
         </div>
         <div class="justify-content-end">
@@ -38,7 +40,6 @@
                 <button class="btn btn-outline-light" type="submit">Logout</button>
             </form>
         </div>
-
 
     </div>
 </nav>
