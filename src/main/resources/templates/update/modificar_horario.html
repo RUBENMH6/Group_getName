@@ -1,10 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Modificar Horario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/}">Group.getName()</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" th:href="@{/cursos}">Cursos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/profesores}">Profesores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/estudiantes}">Estudiantes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/horarios}">Horarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/asignaturas}">Asignaturas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
+                </li>
+
+
+            </ul>
+        </div>
+        <form class="form-inline ml-auto" th:action="@{/logout}" method="post">
+            <button class="btn btn-outline-light" type="submit">Logout</button>
+        </form>
+
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <h2 class="mt-4">Modificar Horario</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <form th:action="@{'/horario/' + ${horario.id_horario} + '/update'}" method="post" th:object="${horario}">
+                <input type="hidden" th:field="*{id_horario}" />
+                <label for="id_asignatura">ID Asignatura:</label><input type="number" class="form-control" id="id_asignatura" name="id_asignatura" th:field="*{id_asignatura}" required>
+                <label for="tiempo_empieza">Empieza:</label><input type="time" class="form-control" id="tiempo_empieza" name="tiempo_empieza" th:field="*{tiempo_empieza}" required>
+                <label for="tiempo_acaba">Acaba:</label><input type="time" class="form-control" id="tiempo_acaba" name="tiempo_acaba" th:field="*{tiempo_acaba}" required>
+                <label for="dia">Dia:</label><input type="date" class="form-control" id="dia" name="dia" th:field="*{dia}" required>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 justify-content-center">
+                        <div class="mt-2 text-center">
+                            <button type="submit" class="btn btn-dark" style="width: 10rem">Guardar</button>
+                        </div>
+                        <div class="mt-2 text-center">
+                            <a class="btn btn-primary btn-dark" th:href="@{/horarios}" style="width: 10rem">Volver</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

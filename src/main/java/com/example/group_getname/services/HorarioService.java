@@ -32,9 +32,11 @@ public class HorarioService implements IHorarioService{
     @Override
     public Horario update(Horario horario) {
         Horario newHorario = this.horarioRepository.findById(horario.getId_horario()).get();
-        newHorario.setTiempo_acaba(horario.getTiempo_acaba());
+        newHorario.setId_asignatura(horario.getId_asignatura());
         newHorario.setTiempo_empieza(horario.getTiempo_empieza());
-        return newHorario;
+        newHorario.setTiempo_acaba(horario.getTiempo_acaba());
+        newHorario.setDia(horario.getDia());
+        return horarioRepository.save(newHorario);
     }
 
     @Override

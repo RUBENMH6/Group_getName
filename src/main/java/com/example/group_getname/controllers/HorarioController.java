@@ -1,5 +1,6 @@
 package com.example.group_getname.controllers;
 
+import com.example.group_getname.models.entity.Asignatura;
 import com.example.group_getname.models.entity.Curso;
 import com.example.group_getname.models.entity.Horario;
 import com.example.group_getname.services.HorarioService;
@@ -8,7 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.Optional;
 
 @Controller
 public class HorarioController {
@@ -28,15 +32,23 @@ public class HorarioController {
         return "create/nuevo_horario";
     }
 
-    @GetMapping("/horario/update")
-    private String modificarHorario(Model model) {
-        model.addAttribute("horario", new Horario());
+    @GetMapping("/horario/{id}/update")
+    public String mostrarModificarHorario(@PathVariable int id, Model model) {
+        Optional<Horario> horario = horarioService.findById(id);
+        model.addAttribute("horario", horario.orElse(null));
         return "update/modificar_horario";
     }
 
     @PostMapping("/horario/create")
     private String crearHorario(@ModelAttribute Horario horario) {
         horarioService.create(horario);
+        return "redirect:/horarios";
+    }
+
+    @PostMapping("/horario/{id}/update")
+    private String modificarHorario(@PathVariable int id, @ModelAttribute Horario horario) {
+        horario.setId_horario(id);
+        horarioService.update(horario);
         return "redirect:/horarios";
     }
 }
