@@ -58,6 +58,7 @@
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">ID Asignatura</th>
                     <th scope="col">DIA</th>
                     <th scope="col">Hora inicio</th>
                     <th scope="col">Hora fin</th>
@@ -70,6 +71,7 @@
                 <tbody>
                 <tr th:each="horario: ${horario}">
                     <td th:text="${horario.id_horario}"></td>
+                    <td th:text="${horario.id_asignatura}"></td>
                     <td th:text="${horario.dia}"></td>
                     <td th:text="${horario.tiempo_empieza}"></td>
                     <td th:text="${horario.tiempo_acaba}"></td>
