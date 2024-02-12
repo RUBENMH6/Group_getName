@@ -7,10 +7,7 @@ import com.example.group_getname.services.HorarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -49,6 +46,12 @@ public class HorarioController {
     private String modificarHorario(@PathVariable int id, @ModelAttribute Horario horario) {
         horario.setId_horario(id);
         horarioService.update(horario);
+        return "redirect:/horarios";
+    }
+
+    @DeleteMapping("/horario/{id}/delete")
+    private String eliminarHorario(@PathVariable int id) {
+        horarioService.delete(id);
         return "redirect:/horarios";
     }
 }
