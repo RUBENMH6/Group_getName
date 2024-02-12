@@ -24,7 +24,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/usuario/create")
-    private String guardarUsuario(@ModelAttribute Usuario usuario) {
+    public String guardarUsuario(@ModelAttribute Usuario usuario) {
         usuarioService.create(usuario);
         return "redirect:/login";
     }

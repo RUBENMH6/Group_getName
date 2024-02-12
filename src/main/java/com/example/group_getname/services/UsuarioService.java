@@ -1,5 +1,6 @@
 package com.example.group_getname.services;
 
+import com.example.group_getname.models.entity.Estudiante;
 import com.example.group_getname.models.entity.Usuario;
 import com.example.group_getname.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +27,21 @@ public class UsuarioService implements IUsuarioService{
 
     @Override
     public Usuario create(Usuario usuario) {
+        List<Usuario> usuarios = usuarioRepository.findAll();
+        for (Usuario u : usuarios){
+            if (u.getId_user() == usuario.getId_user()) {
+                break;
+            }
+        }
         return this.usuarioRepository.save(usuario);
     }
 
     @Override
     public Usuario update(Usuario usuario) {
-        return null;
+        Usuario newUsuario = this.usuarioRepository.findById(usuario.getId_user()).get();
+        newUsuario.setNombre(usuario.getNombre());
+        newUsuario.setApellido(usuario.getApellido());
+        return newUsuario;
     }
 
     @Override

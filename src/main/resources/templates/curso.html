@@ -25,10 +25,13 @@
                     <th>
                         <div class="justify-content-center align-items-center" sec:authorize="hasRole('ADMIN')"/>
                     </th>
+                    <th>
+                        <div class="justify-content-center align-items-center" sec:authorize="hasRole('ADMIN')"/>
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="curso: ${curso}">
+                <tr class="justify-content-center align-items-center" th:each="curso: ${curso}">
                     <td th:text="${curso.id_curso}"></td>
                     <td th:text="${curso.nombre}"></td>
                     <td th:text="${curso.descripcion}"></td>
