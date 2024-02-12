@@ -51,8 +51,6 @@ public class EstudianteService implements IEstudianteService{
 
     @Override
     public void delete(int id) {
-        Optional<Estudiante> estudiante = estudianteRepository.findById(id);
-        System.out.println(estudiante);
         estudianteRepository.deleteById(id);
     }
 }
