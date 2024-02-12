@@ -41,8 +41,6 @@ public class HorarioService implements IHorarioService{
 
     @Override
     public void delete(int id) {
-        Optional<Horario> horario = horarioRepository.findById(id);
-        System.out.println(horario);
         horarioRepository.deleteById(id);
     }
 }

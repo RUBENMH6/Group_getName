@@ -46,8 +46,6 @@ public class AsignaturaService implements IAsignaturaService {
 
     @Override
     public void delete(int id) {
-        Optional<Asignatura> asignatura= asignaturaRepository.findById(id);
-        System.out.println(asignatura);
         asignaturaRepository.deleteById(id);
 
     }

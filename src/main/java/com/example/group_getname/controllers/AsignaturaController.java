@@ -46,6 +46,12 @@ public class AsignaturaController  {
         return "redirect:/asignaturas";
     }
 
+    @DeleteMapping("/asignatura/{id}/delete")
+    private String eliminarAsignatura(@PathVariable int id) {
+        asignaturaService.delete(id);
+        return "redirect:/asignaturas";
+    }
+
 
 
 
