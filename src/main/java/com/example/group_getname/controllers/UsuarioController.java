@@ -28,4 +28,10 @@ public class UsuarioController {
         usuarioService.create(usuario);
         return "redirect:/login";
     }
+
+    @GetMapping("/registro")
+    public String showRegistroPage(Model model) {
+        model.addAttribute("usuario", new Usuario());
+        return "registro";
+    }
 }
